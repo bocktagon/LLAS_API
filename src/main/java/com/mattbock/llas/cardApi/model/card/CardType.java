@@ -4,29 +4,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "card_types")
-public class CardType {
+public class CardType extends CardProperty {
 
-    @Id
-    @Column(name="card_type_id")
-    private int id;
-    private String name;
     private String abbreviation;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getAbbreviation() {
         return abbreviation;

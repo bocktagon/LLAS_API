@@ -13,21 +13,21 @@ DROP TABLE IF EXISTS idol_groups;
 
 
 CREATE TABLE schools (
-    school_id smallint NOT NULL,
+    id smallint NOT NULL,
     name varchar(11) NOT NULL,
-    PRIMARY KEY (school_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE subunits (
-    subunit_id smallint NOT NULL,
+    id smallint NOT NULL,
     name varchar(11) NOT NULL,
-    PRIMARY KEY (subunit_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE idol_groups (
-    idol_group_id smallint NOT NULL,
+    id smallint NOT NULL,
     name varchar(32) NOT NULL,
-    PRIMARY KEY (idol_group_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE idols (
@@ -40,62 +40,62 @@ CREATE TABLE idols (
     idol_group_id smallint NOT NULL,
     subunit_id smallint NOT NULL,
     PRIMARY KEY (idol_id),
-    FOREIGN KEY (school_id) REFERENCES schools(school_id),
-    FOREIGN KEY (idol_group_id) REFERENCES idol_groups(idol_group_id),
-    FOREIGN KEY (subunit_id) REFERENCES subunits(subunit_id)
+    FOREIGN KEY (school_id) REFERENCES schools(id),
+    FOREIGN KEY (idol_group_id) REFERENCES idol_groups(id),
+    FOREIGN KEY (subunit_id) REFERENCES subunits(id)
 );
 
 CREATE TABLE rarities (
-    rarity_id smallint NOT NULL,
+    id smallint NOT NULL,
     abbreviation varchar(2) NOT NULL,
     name varchar(10) NOT NULL,
-    PRIMARY KEY (rarity_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE card_types (
-    card_type_id smallint NOT NULL,
+    id smallint NOT NULL,
     name varchar(7) NOT NULL,
     abbreviation varchar(2) NOT NULL,
-    PRIMARY KEY (card_type_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE attributes (
-    attribute_id smallint NOT NULL,
+    id smallint NOT NULL,
     name varchar(7) NOT NULL,
-    PRIMARY KEY (attribute_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE appeals (
-    appeal_id int NOT NULL,
+    id int NOT NULL,
     lb0 int NOT NULL,
     lb1 int NOT NULL,
     lb2 int NOT NULL,
     lb3 int NOT NULL,
     lb4 int NOT NULL,
     lb5 int NOT NULL,
-    PRIMARY KEY (appeal_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE staminas (
-    stamina_id int NOT NULL,
+    id int NOT NULL,
     lb0 int NOT NULL,
     lb1 int NOT NULL,
     lb2 int NOT NULL,
     lb3 int NOT NULL,
     lb4 int NOT NULL,
     lb5 int NOT NULL,
-    PRIMARY KEY (stamina_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE techniques (
-    technique_id int NOT NULL,
+    id int NOT NULL,
     lb0 int NOT NULL,
     lb1 int NOT NULL,
     lb2 int NOT NULL,
     lb3 int NOT NULL,
     lb4 int NOT NULL,
     lb5 int NOT NULL,
-    PRIMARY KEY (technique_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE cards (
@@ -111,10 +111,10 @@ CREATE TABLE cards (
     technique_id int NOT NULL,
     PRIMARY KEY (card_id),
     FOREIGN KEY (idol_id) REFERENCES idols(idol_id),
-    FOREIGN KEY (rarity_id) REFERENCES rarities(rarity_id),
-    FOREIGN KEY (card_type_id) REFERENCES card_types(card_type_id),
-    FOREIGN KEY (attribute_id) REFERENCES attributes(attribute_id),
-    FOREIGN KEY (appeal_id) REFERENCES appeals(appeal_id),
-    FOREIGN KEY (stamina_id) REFERENCES staminas(stamina_id),
-    FOREIGN KEY (technique_id) REFERENCES techniques(technique_id)
+    FOREIGN KEY (rarity_id) REFERENCES rarities(id),
+    FOREIGN KEY (card_type_id) REFERENCES card_types(id),
+    FOREIGN KEY (attribute_id) REFERENCES attributes(id),
+    FOREIGN KEY (appeal_id) REFERENCES appeals(id),
+    FOREIGN KEY (stamina_id) REFERENCES staminas(id),
+    FOREIGN KEY (technique_id) REFERENCES techniques(id)
 );

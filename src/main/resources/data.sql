@@ -1,9 +1,9 @@
-INSERT INTO llas_cards.schools (school_id, name) VALUES
+INSERT INTO llas_cards.schools (id, name) VALUES
     (1, "Otonokizaka"),
     (2, "Uranohoshi"),
     (3, "Nijigasaki");
 
-INSERT INTO llas_cards.subunits (subunit_id, name) VALUES
+INSERT INTO llas_cards.subunits (id, name) VALUES
     (1, "lily White"),
     (2, "Printemps"),
     (3, "BiBi"),
@@ -14,7 +14,7 @@ INSERT INTO llas_cards.subunits (subunit_id, name) VALUES
     (8, "A ZU NA"),
     (9, "QU4RTZ");
 
-INSERT INTO llas_cards.idol_groups (idol_group_id, name) VALUES
+INSERT INTO llas_cards.idol_groups (id, name) VALUES
     (1, "Mu's"),
     (2, "Aqours"),
     (3, "Nijigasaki High School Idol Club");
@@ -48,18 +48,18 @@ INSERT INTO llas_cards.idols (idol_id, first_name, last_name, color, school_id, 
     (26, "Emma", "Verde", "#a6e37b", 3, 3, 3, 9),
     (27, "Rina", "Tennoji", "#aeabae", 3, 1, 3, 9);
 
-INSERT INTO llas_cards.rarities (rarity_id, abbreviation, name) VALUES
+INSERT INTO llas_cards.rarities (id, abbreviation, name) VALUES
     (1, "R", "Rare"),
     (2, "SR", "Super Rare"),
     (3, "UR", "Ultra Rare");
 
-INSERT INTO llas_cards.card_types (card_type_id, name, abbreviation) VALUES
+INSERT INTO llas_cards.card_types (id, name, abbreviation) VALUES
     (1, "Voltage", "Vo"),
     (2, "Guard", "Gd"),
     (3, "Skill", "Sk"),
     (4, "Special", "Sp");
 
-INSERT INTO llas_cards.attributes (attribute_id, name) VALUES
+INSERT INTO llas_cards.attributes (id, name) VALUES
     (1, "Active"),
     (2, "Cool"),
     (3, "Elegant"),
@@ -67,15 +67,15 @@ INSERT INTO llas_cards.attributes (attribute_id, name) VALUES
     (5, "Pure"),
     (6, "Smile");
 
-INSERT INTO llas_cards.appeals (appeal_id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
+INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (1, 0, 1, 2, 3, 4, 5),
     (2, 0, 1, 2, 3, 4, 5);
 
-INSERT INTO llas_cards.staminas (stamina_id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
+INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (1, 2713, 3063, 3413, 3763, 4288, 4474),
     (2, 0, 1, 2, 3, 4, 5);
 
-INSERT INTO llas_cards.techniques (technique_id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
+INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (1, 0, 1, 2, 3, 4, 5),
     (2, 0, 1, 2, 3, 4, 5);
 

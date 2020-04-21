@@ -4,26 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "subunits")
-public class Subunit {
+public class Subunit extends IdolProperty {
 
-    @Id
-    @Column(name="subunit_id")
-    private int id;
-    private String name;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
