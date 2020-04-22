@@ -4,7 +4,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class CardStat {
+public class CardStatSet {
 
     @Id
     private int id;

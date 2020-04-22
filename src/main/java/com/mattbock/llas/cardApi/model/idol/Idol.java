@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Idol {
 
     @Id
-    @Column(name="idol_id")
     private int id;
 
     private String firstName;

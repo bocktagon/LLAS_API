@@ -19,7 +19,7 @@ INSERT INTO llas_cards.idol_groups (id, name) VALUES
     (2, "Aqours"),
     (3, "Nijigasaki High School Idol Club");
 
-INSERT INTO llas_cards.idols (idol_id, first_name, last_name, color, school_id, year, idol_group_id, subunit_id) VALUES
+INSERT INTO llas_cards.idols (id, first_name, last_name, color, school_id, year, idol_group_id, subunit_id) VALUES
     (1, "Honoka", "Kosaka", "#E2732D", 1, 2, 1, 2),
     (2, "Eli", "Ayase", "#36B3DD", 1, 3, 1, 3),
     (3, "Kotori", "Minami", "#8C9395", 1, 2, 1, 2),
@@ -48,6 +48,28 @@ INSERT INTO llas_cards.idols (idol_id, first_name, last_name, color, school_id, 
     (26, "Emma", "Verde", "#a6e37b", 3, 3, 3, 9),
     (27, "Rina", "Tennoji", "#aeabae", 3, 1, 3, 9);
 
+INSERT INTO llas_cards.buff_types (id, type) VALUES
+    (1, "appeal"),
+    (2, "stamina"),
+    (3, "technique");
+
+INSERT INTO llas_cards.buff_targets (id, target) VALUES
+    (1, "self"),
+    (2, "strategy"),
+    (3, "others"),
+    (4, "all"),
+    (5, "attribute"),
+    (6, "type"),
+    (7, "group"),
+    (8, "school"),
+    (9, "year"),
+    (10, "subunit");
+
+INSERT INTO llas_cards.passive_abilities (id, buff_type_id, buff_target_id, buff_lb0, buff_lb1, buff_lb2, buff_lb3, buff_lb4) VALUES
+    (1, 3, 6, 0.03, 0.033, 0.036, 0.039, 0.042),
+    (2, 1, 2, 0.03, 0.035, 0.04, 0.045, 0.05);
+
+
 INSERT INTO llas_cards.rarities (id, abbreviation, name) VALUES
     (1, "R", "Rare"),
     (2, "SR", "Super Rare"),
@@ -68,17 +90,18 @@ INSERT INTO llas_cards.attributes (id, name) VALUES
     (6, "Smile");
 
 INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
-    (1, 0, 1, 2, 3, 4, 5),
-    (2, 0, 1, 2, 3, 4, 5);
+    (1, 2716, 3063, 3413, 3763, 3938, 4474),
+    (2, 4976, 5957, 6284, 6938, 8246, 8918);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (1, 2713, 3063, 3413, 3763, 4288, 4474),
-    (2, 0, 1, 2, 3, 4, 5);
+    (2, 5275, 5969, 7010, 7704, 8398, 9458);
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
-    (1, 0, 1, 2, 3, 4, 5),
-    (2, 0, 1, 2, 3, 4, 5);
+    (1, 2796, 3156, 3516, 3696, 4056, 4610),
+    (2, 4833, 5151, 6105, 7377, 8013, 8649);
 
-INSERT INTO llas_cards.Cards (card_id, idol_id, rarity_id, card_type_id, attribute_id, title, idolized_title, appeal_id, stamina_id, technique_id) VALUES
-    (1, 23, 2, 4, 1, "A Special Outing", "Exciting Animal", 1, 1, 1),
-    (2, 23, 3, 2, 3, "UMA Will Definitely Eat it, Too!", "Princess of Ryuuguujou", 2, 2, 2);
+INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id) VALUES
+    (1, 23, 2, 4, 1, "A Special Outing", "Exciting Animal", 1, 1, 1, 1),
+    (2, 23, 3, 2, 3, "UMA Will Definitely Eat it, Too!", "Princess of Ryuuguujou", 2, 2, 2, 2);
+

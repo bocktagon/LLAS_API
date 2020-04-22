@@ -11,6 +11,10 @@ DROP TABLE IF EXISTS schools;
 DROP TABLE IF EXISTS subunits;
 DROP TABLE IF EXISTS idol_groups;
 
+DROP TABLE IF EXISTS passive_abilities;
+DROP TABLE IF EXISTS buff_types;
+DROP TABLE IF EXISTS buff_targets;
+
 
 CREATE TABLE schools (
     id smallint NOT NULL,
@@ -31,7 +35,7 @@ CREATE TABLE idol_groups (
 );
 
 CREATE TABLE idols (
-    idol_id smallint NOT NULL,
+    id smallint NOT NULL,
     first_name varchar(10) NOT NULL,
     last_name varchar(10) NOT NULL,
     color varchar(7) NOT NULL,
@@ -39,10 +43,36 @@ CREATE TABLE idols (
     year smallint NOT NULL,
     idol_group_id smallint NOT NULL,
     subunit_id smallint NOT NULL,
-    PRIMARY KEY (idol_id),
+    PRIMARY KEY (id),
     FOREIGN KEY (school_id) REFERENCES schools(id),
     FOREIGN KEY (idol_group_id) REFERENCES idol_groups(id),
     FOREIGN KEY (subunit_id) REFERENCES subunits(id)
+);
+
+CREATE TABLE buff_types (
+    id int NOT NULL,
+    type varchar(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE buff_targets (
+    id int NOT NULL,
+    target varchar(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE passive_abilities (
+    id int NOT NULL,
+    buff_type_id int NOT NULL,
+    buff_target_id int NOT NULL,
+    buff_lb0 double NOT NULL,
+    buff_lb1 double NOT NULL,
+    buff_lb2 double NOT NULL,
+    buff_lb3 double NOT NULL,
+    buff_lb4 double NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (buff_type_id) REFERENCES buff_types(id),
+    FOREIGN KEY (buff_target_id) REFERENCES buff_targets(id)
 );
 
 CREATE TABLE rarities (
@@ -99,7 +129,7 @@ CREATE TABLE techniques (
 );
 
 CREATE TABLE cards (
-    card_id smallint NOT NULL,
+    id int NOT NULL,
     idol_id smallint NOT NULL,
     rarity_id smallint NOT NULL,
     card_type_id smallint NOT NULL,
@@ -109,12 +139,14 @@ CREATE TABLE cards (
     appeal_id int NOT NULL,
     stamina_id int NOT NULL,
     technique_id int NOT NULL,
-    PRIMARY KEY (card_id),
-    FOREIGN KEY (idol_id) REFERENCES idols(idol_id),
+    passive_ability_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idol_id) REFERENCES idols(id),
     FOREIGN KEY (rarity_id) REFERENCES rarities(id),
     FOREIGN KEY (card_type_id) REFERENCES card_types(id),
     FOREIGN KEY (attribute_id) REFERENCES attributes(id),
     FOREIGN KEY (appeal_id) REFERENCES appeals(id),
     FOREIGN KEY (stamina_id) REFERENCES staminas(id),
-    FOREIGN KEY (technique_id) REFERENCES techniques(id)
+    FOREIGN KEY (technique_id) REFERENCES techniques(id),
+    FOREIGN KEY (passive_ability_id) REFERENCES passive_abilities(id)
 );

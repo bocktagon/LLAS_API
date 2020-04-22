@@ -1,5 +1,6 @@
 package com.mattbock.llas.cardApi.model.card;
 
+import com.mattbock.llas.cardApi.model.ability.PassiveAbility;
 import com.mattbock.llas.cardApi.model.idol.Idol;
 
 import javax.persistence.*;
@@ -9,7 +10,6 @@ import javax.persistence.*;
 public class Card {
 
     @Id
-    @Column(name="card_id")
     private Integer id;
 
     private String title;
@@ -42,6 +42,10 @@ public class Card {
     @OneToOne
     @JoinColumn(name = "technique_id")
     private Technique technique;
+
+    @OneToOne
+    @JoinColumn(name = "passive_ability_id")
+    private PassiveAbility passiveAbility;
 
     public Integer getId() {
         return id;
@@ -121,5 +125,13 @@ public class Card {
 
     public void setTechnique(Technique technique) {
         this.technique = technique;
+    }
+
+    public PassiveAbility getPassiveAbility() {
+        return passiveAbility;
+    }
+
+    public void setPassiveAbility(PassiveAbility passiveAbility) {
+        this.passiveAbility = passiveAbility;
     }
 }
