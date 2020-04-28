@@ -47,6 +47,9 @@ public class Card {
     @JoinColumn(name = "passive_ability_id")
     private PassiveAbility passiveAbility;
 
+    private String primaryActiveAbilityText;
+    private String secondaryActiveAbilityText;
+
     public Integer getId() {
         return id;
     }
@@ -133,5 +136,13 @@ public class Card {
 
     public void setPassiveAbility(PassiveAbility passiveAbility) {
         this.passiveAbility = passiveAbility;
+    }
+
+    public String getPrimaryActiveAbilityText() {
+        return primaryActiveAbilityText;
+    }
+
+    public void setPrimaryActiveAbilityText(String primaryActiveAbilityText) {
+        this.primaryActiveAbilityText = primaryActiveAbilityText;
     }
 }
