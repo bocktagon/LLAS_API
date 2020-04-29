@@ -145,4 +145,12 @@ public class Card {
     public void setPrimaryActiveAbilityText(String primaryActiveAbilityText) {
         this.primaryActiveAbilityText = primaryActiveAbilityText;
     }
+
+    public String getSecondaryActiveAbilityText() {
+        return secondaryActiveAbilityText;
+    }
+
+    public void setSecondaryActiveAbilityText(String secondaryActiveAbilityText) {
+        this.secondaryActiveAbilityText = secondaryActiveAbilityText;
+    }
 }
