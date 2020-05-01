@@ -63,6 +63,7 @@ CREATE TABLE buff_targets (
 
 CREATE TABLE passive_abilities (
     id int NOT NULL,
+    ability_text varchar(150) NOT NULL,
     buff_type_id int NOT NULL,
     buff_target_id int NOT NULL,
     buff_lvl0 double NOT NULL,

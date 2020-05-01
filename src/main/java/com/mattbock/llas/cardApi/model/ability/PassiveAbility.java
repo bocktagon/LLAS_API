@@ -9,6 +9,8 @@ public class PassiveAbility {
     @Id
     private int id;
 
+    private String abilityText;
+
     @OneToOne
     @JoinColumn(name = "buff_type_id")
     private BuffType buffedStat;
@@ -29,6 +31,14 @@ public class PassiveAbility {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAbilityText() {
+        return abilityText;
+    }
+
+    public void setAbilityText(String abilityText) {
+        this.abilityText = abilityText;
     }
 
     public BuffType getBuffedStat() {
