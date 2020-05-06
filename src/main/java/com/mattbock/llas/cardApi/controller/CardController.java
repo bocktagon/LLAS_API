@@ -15,7 +15,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public @ResponseBody Optional<Card> getById(@PathVariable("id") int id) {
         return cardService.getById(id);
     }
@@ -25,14 +25,14 @@ public class CardController {
         return cardService.getAllCards();
     }
 
-    @GetMapping("/byName/{name}")
+    @GetMapping("/name/{name}")
     public @ResponseBody Iterable<Card> getByName(@PathVariable("name") String name) {
         return cardService.getByName(name);
     }
 
     @GetMapping("/search")
     public @ResponseBody Iterable<Card> search(@RequestParam String params) {
-        return cardService.search(params);
+        return cardService.textSearch(params);
     }
 
 }
