@@ -22,13 +22,23 @@ Currently supported searchable elements:
     - Checks normal and idolized
 
 Other planned searchable elements:
-- Source
+- Card Source
     - initial (in game at the start)
     - event (event reward)
-    - gacha (normal or event gacha)
+    - gacha (normal gacha)
     - fes (fes gacha)
 - Role
     - healer
     - shielder
     - scorer
     - etc.
+
+Example searches:
+- "party Kotori"
+    - Returns "Welcome to the Party" Kotori
+- "Elegant Dia UR"
+    - Returns "Priestess Dance" Dia (because that's the only one that meets all those requirements)
+- "Smile UR"
+    - Returns all Smile UR cards
+- "Snow Halation"
+    - Returns all 9 Snow Halation cards
