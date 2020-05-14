@@ -33,7 +33,6 @@ public class CardService {
     }
 
     public Iterable<Card> textSearch(String params) {
-        System.out.println("received: " + params);
         List<String> tokens = Arrays.asList(params.split(" "));
         List<String> titleTokens = new ArrayList<>();
 
@@ -80,13 +79,6 @@ public class CardService {
             builder.append("%");
             titleText = builder.toString();
         }
-
-        System.out.println("SEARCHING FOR:");
-        System.out.println("idolId: " + idolId);
-        System.out.println("rarityId: " + rarityId);
-        System.out.println("typeId: " + typeId);
-        System.out.println("attributeId: " + attributeId);
-        System.out.println("titleText: " + titleText);
 
         return cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, titleText);
     }

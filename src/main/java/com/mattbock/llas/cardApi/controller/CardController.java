@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(path="/api/cards")
+@RequestMapping(path="/cards")
 public class CardController {
 
     @Autowired

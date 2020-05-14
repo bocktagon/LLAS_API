@@ -11,11 +11,13 @@
 	<groupId>com.mattbock.llas</groupId>
 	<artifactId>cardApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>cardApi</name>
 	<description>API for Love Live All Stars cards</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 	</properties>
 
 	<!-- The Spring Cloud GCP BOM will manage spring-cloud-gcp version numbers for you. -->
@@ -23,30 +25,63 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-gcp-dependencies</artifactId>
-				<version>${project.version}</version>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
+	<profiles>
+		<profile>
+			<id>cloud-gcp</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-gcp-starter</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>com.google.cloud.sql</groupId>
+					<artifactId>mysql-socket-factory</artifactId>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.google.cloud.tools</groupId>
+						<artifactId>appengine-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.protobuf</groupId>
+					<artifactId>protobuf-java</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -65,6 +100,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -72,6 +114,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<configuration>
+					<deploy.stopPreviousVersion>true</deploy.stopPreviousVersion>
+					<deploy.projectId>all-stars-api</deploy.projectId>
+					<deploy.version>GCLOUD_CONFIG</deploy.version>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping(path="/api")
+@RequestMapping(path="/dev")
 public class MainController {
 
     @Autowired
@@ -17,5 +17,10 @@ public class MainController {
     @GetMapping(path="/allCards")
     public @ResponseBody Iterable<Card> getAllCards() {
         return cardRepository.findAll();
+    }
+
+    @GetMapping(path="/beep")
+    public @ResponseBody String beep() {
+        return "boop";
     }
 }

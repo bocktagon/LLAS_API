@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path="api/ref")
+@RequestMapping(path="/ref")
 public class RefController {
 
     @Autowired
