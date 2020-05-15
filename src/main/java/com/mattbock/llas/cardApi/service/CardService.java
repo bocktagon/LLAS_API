@@ -32,6 +32,18 @@ public class CardService {
         return cardRepository.findByIdolFirstNameIgnoreCase(name);
     }
 
+    public Iterable<Card> getByRarity(String rarity) {
+        return cardRepository.findByRarity(rarity);
+    }
+
+    public Iterable<Card> getByAttribute(String attribute) {
+        return cardRepository.findByAttributeNameIgnoreCase(attribute);
+    }
+
+    public Iterable<Card> getByType(String type) {
+        return cardRepository.findByCardType(type);
+    }
+
     public Iterable<Card> textSearch(String params) {
         List<String> tokens = Arrays.asList(params.split(" "));
         List<String> titleTokens = new ArrayList<>();

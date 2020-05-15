@@ -10,7 +10,14 @@ import java.util.List;
 
 public interface CardRepository extends CrudRepository<Card, Integer> {
     List<Card> findByIdolFirstNameIgnoreCase(String firstName);
-    List<Card> findByIdolId(int id);
+
+    @Query(value="SELECT card FROM Card card WHERE card.rarity.abbreviation = :rarity OR card.rarity.name = :rarity")
+    List<Card> findByRarity(@Param("rarity") String rarity);
+
+    List<Card> findByAttributeNameIgnoreCase(String attribute);
+
+    @Query(value="SELECT card FROM Card card WHERE card.cardType.name = :type OR card.cardType.abbreviation = :type")
+    List<Card> findByCardType(String type);
 
     @Query(value = "SELECT card FROM Card card " +
             "WHERE (:idolId is null OR card.idol.id = :idolId) " +

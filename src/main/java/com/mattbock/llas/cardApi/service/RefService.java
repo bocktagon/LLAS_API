@@ -4,10 +4,10 @@ import com.mattbock.llas.cardApi.model.card.Attribute;
 import com.mattbock.llas.cardApi.model.card.CardType;
 import com.mattbock.llas.cardApi.model.card.Rarity;
 import com.mattbock.llas.cardApi.model.idol.Idol;
-import com.mattbock.llas.cardApi.repository.AttributeRepository;
-import com.mattbock.llas.cardApi.repository.CardTypeRepository;
-import com.mattbock.llas.cardApi.repository.IdolRepository;
-import com.mattbock.llas.cardApi.repository.RarityRepository;
+import com.mattbock.llas.cardApi.model.idol.IdolGroup;
+import com.mattbock.llas.cardApi.model.idol.School;
+import com.mattbock.llas.cardApi.model.idol.Subunit;
+import com.mattbock.llas.cardApi.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,15 +19,19 @@ public class RefService {
 
     @Autowired
     private IdolRepository idolRepository;
-
+    @Autowired
+    private IdolGroupRespository idolGroupRespository;
     @Autowired
     private RarityRepository rarityRepository;
-
+    @Autowired
+    private SchoolRepository schoolRepository;
     @Autowired
     private CardTypeRepository cardTypeRepository;
-
     @Autowired
     private AttributeRepository attributeRepository;
+    @Autowired
+    private SubunitRepository subunitRepository;
+
 
     private Map<String, Integer> idolNamesIds;
     private Map<String, Integer> rarityAbbreviationsIds;
@@ -35,14 +39,39 @@ public class RefService {
     private Map<String, Integer> typeAbbreviationsIds;
     private Map<String, Integer> attributeNamesIds;
 
+    //--------------------------------------------------------------------Idols
+    public Iterable<Idol> getIdols() {
+        return idolRepository.findAll();
+    }
+
     public Map<String, Integer> getIdolNamesIds() {
         verifyIdolNamesMap();
         return idolNamesIds;
     }
 
+    //--------------------------------------------------------------------IdolGroups
+    public Iterable<IdolGroup> getIdolGroups() {
+        return idolGroupRespository.findAll();
+    }
+
+    //--------------------------------------------------------------------Rarities
+    public Iterable<Rarity> getRarities() {
+        return rarityRepository.findAll();
+    }
+
     public Map<String, Integer> getRarityAbbreviationsIds() {
         verifyRarityAbbreviationssMap();
         return rarityAbbreviationsIds;
+    }
+
+    //--------------------------------------------------------------------Schools
+    public Iterable<School> getSchools() {
+        return schoolRepository.findAll();
+    }
+
+    //--------------------------------------------------------------------CardTypes
+    public Iterable<CardType> getCardTypes() {
+        return cardTypeRepository.findAll();
     }
 
     public Map<String, Integer> getTypeNamesIds() {
@@ -55,9 +84,18 @@ public class RefService {
         return typeAbbreviationsIds;
     }
 
+    //--------------------------------------------------------------------Attributes
+    public Iterable<Attribute> getAttributes() {
+        return attributeRepository.findAll();
+    }
+
     public Map<String, Integer> getAttributeNamesIds() {
         veryfyAttributeNamesMap();
         return attributeNamesIds;
+    }
+    //--------------------------------------------------------------------Subunits
+    public Iterable<Subunit> getSubunits() {
+        return subunitRepository.findAll();
     }
 
     private void verifyIdolNamesMap() {
