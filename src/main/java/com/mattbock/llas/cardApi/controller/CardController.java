@@ -13,6 +13,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping(path="/cards")
 @Api(value="Card management", description = "Endpoints for retrieving card data.")
+@CrossOrigin
 public class CardController {
 
     @Autowired

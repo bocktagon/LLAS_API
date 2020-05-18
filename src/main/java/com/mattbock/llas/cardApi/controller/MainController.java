@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping(path="/dev")
 @Api(value="Dev controller.", description = "Just for testing things. Nothing important happens here.")
+@CrossOrigin
 public class MainController {
 
     @Autowired
