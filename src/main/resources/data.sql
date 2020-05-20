@@ -301,7 +301,15 @@ INSERT INTO llas_cards.passive_abilities (id, ability_text, buff_type_id, buff_t
 	(232, "Increases the Stamina stat of cards in the same subunit by 5/5.5/6/6.5/7%", 2, 2, 5, 5.5, 6, 6.5, 7),
 	(233, "Increases the Technique stat of all members by 3/3.3/3.6/3.9/4.2%", 3, 4, 3, 3.3, 3.6, 3.9, 4.2),
 	(234, "Increases the Appeal stat of cards of the same year group [1st years] by 2/2.3/2.6/2.9/3.2%", 1, 9, 2, 2.3, 2.6, 2.9, 3.2),
-	(235, "Increases the Appeal stat of cards of the same attribute [Cool] by 1.5/1.8/2.1/2.4/2.7%", 1, 5, 1.5, 1.8, 2.1, 2.4, 2.7);
+	(235, "Increases the Appeal stat of cards of the same attribute [Cool] by 1.5/1.8/2.1/2.4/2.7%", 1, 5, 1.5, 1.8, 2.1, 2.4, 2.7),
+	(236, "Increases the Technique stat of cards of the same attribute [Smile] by 4/4.3/4.6/4.9/5.2%", 3, 5, 4, 4.6, 4.6, 4.9, 5.2),
+	(237, "Increases the Stamina stat of cards in the same subunit by 3/3.5/4/4.5/5%", 2, 2, 3, 3.5, 4, 4.5, 5),
+	(238, "Increases the Appeal stat of cards of the same year [2nd years] by 4/4.3/4.6/4.9/5.2%", 1, 9, 4, 4.3, 4.6, 4.9, 5.2),
+	(239, "Increases the Technique stat of cards of the same type [Sp] by 3/3.3/3.6/3.9/4.2%", 3, 6, 3, 3.3, 3.6, 3.9, 4.2),
+	(240, "Increases the Stamina stat of all members by 3/3.3/3.6/3.9/4.2%", 2, 4, 3, 3.3, 3.6, 3.9, 4.2),
+	(241, "Increases the Technique stat of all members by 3/3.3/3.6/3.9/4.2%", 3, 4, 3, 3.3, 3.6, 3.9, 4.2),
+	(242, "Increases her own Stamina stat by 5/5.5/6/6.5/7%", 2, 1, 5, 5.5, 6, 6.5, 7),
+	(243, "Increases the Technique stat of cards in the same subunit by 3/3.5/4/4.5/5%", 3, 2, 3, 3.5, 4, 4.5, 5);
 
 
 INSERT INTO llas_cards.rarities (id, abbreviation, name) VALUES
@@ -558,7 +566,15 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(232, 4309, 5158, 5441, 6007, 7139, 7711),
 	(233, 4864, 5184, 6144, 7424, 8064, 8720),
 	(234, 4093, 4561, 5083, 5344, 5866, 6661),
-	(235, 3006, 3394, 3782, 4170, 4364, 4961);
+	(235, 3006, 3394, 3782, 4170, 4364, 4961),
+	(236, 5320, 5670, 6720, 8120, 8820, 9536),
+	(237, 2611, 2949, 3287, 3625, 4132, 4308),
+	(238, 5842, 6226, 7378, 8914, 9682, 10465),
+	(239, 3766, 4252, 4738, 5224, 5467, 6204),
+	(240, 4699, 5626, 5935, 6553, 7789, 8414),
+	(241, 4743, 5367, 6303, 6927, 7551, 8490),
+	(242, 2921, 3299, 3677, 4055, 4622, 4818),
+	(243, 2752, 3106, 3460, 3814, 3991, 4535);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 1603, 1861, 1990, 2119, 2377, 2638),
@@ -795,7 +811,16 @@ INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(232, 6457, 7307, 8582, 9432, 10282, 11566),
 	(233, 3451, 4132, 4359, 4813, 5721, 6194),
 	(234, 1888, 2132, 2376, 2620, 2742, 3118),
-	(235, 2489, 2811, 3133, 3294, 3616, 4110);
+	(235, 2489, 2811, 3133, 3294, 3616, 4110),
+	(236, 4066, 4870, 5138, 5674, 6746, 7292),
+	(237, 4183, 4723, 5263, 5533, 6073, 6895),
+	(238, 3536, 4000, 4696, 5160, 5624, 6333),
+	(239, 2299, 2595, 2891, 3187, 3631, 3791),
+	(240, 6415, 7259, 8525, 9369, 10213, 11498),
+	(241, 3838, 4091, 4850, 5862, 6368, 6884),
+	(242, 3522, 2976, 4430, 4657, 5111, 5810),
+	(243, 2752, 3106, 3460, 3637, 3991, 4535);
+
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 2882, 3114, 3346, 3810, 4274, 4750),
@@ -1032,7 +1057,15 @@ INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(232, 4611, 4914, 5823, 7035, 7641, 8262),
 	(233, 4477, 5067, 5952, 6542, 7132, 8030),
 	(234, 2668, 3012, 3356, 3700, 4216, 4393),
-	(235, 3101, 3501, 3901, 4301, 4901, 5103);
+	(235, 3101, 3501, 3901, 4301, 4901, 5103),
+	(236, 6270, 7094, 8330, 9154, 9978, 11220),
+	(237, 3662, 4134, 4606, 5078, 5314, 6032),
+	(238, 5998, 7180, 7574, 8362, 9938, 10739),
+	(239, 4390, 4956, 5522, 5805, 6371, 7238),
+	(240, 4540, 4839, 5736, 6932, 7530, 8132),
+	(241, 4224, 5058, 5336, 5892, 7004, 7572),
+	(242, 2151, 2429, 2707, 2985, 3124, 3543),
+	(243, 3101, 3501, 3901, 4301, 4901, 5103);
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
 	(1, 1, 1, 1, 6, "Otonokizaka High Second-Year", "Energetic Girl Who's All Smiles", 1, 1, 1, 1, "Increases Voltage by 200/250/300/350/400 (30% activation rate)", "n/a"),
@@ -1171,10 +1204,10 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
 	(134, 7, 3, 4, 1, "Your Wish Might Come True", "Gemini Star Bright", 134, 134, 134, 134, "Increases the Critical rate of all other team members by 3.8/4.1/4.4/4.7/5% for the next 15 notes (33% activation rate)", "Active: If activated at the beginning of Appeal Chance, increases the SP gauge gain of all members by 20% for the next 5 notes (30% activation chance)"),
 	(135, 11, 2, 2, 2, "Wake Up, Chika!", "Kimino Kokorowa Kagayaiterukai", 135, 135, 135, 135, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (30% activation rate)", "Active: If activated at the beginning of the Live, reduces damage taken by 1.2% for the remainder of the Live (30% activation chance)"),
 	(136, 26, 2, 3, 6, "Indescribable Charms", "Exciting Animal", 136, 136, 136, 136, "Increases skill activation rate of cards in the same subunit by 3.2/3.4/3.6/3.8/4% for the next 5 notes (30% activation rate)", "Active: If activated upon completing Appeal Chance, increases the Appeal stat of all members by 3% for the remainder of the Live (one time, 30% activation chance)"),
-	(137, 5, 3, 1, 6, "こっちこっち早くするにゃ！", "After School Cat", 137, 137, 137, 137, "Increases the Voltage gain of cards of the same year group [1st years] by 5/5.3/5.6/5.9/6.2% for the next 5 notes (33% activation rate)", "Active: If activated upon completing Appeal Chance, increases the Critical rate of cards of the same attribute [Smile] by 10% for the next 10 notes (50% activation chance)"),
-	(138, 12, 2, 3, 1, "ひと泳ぎしてたんだよ～", "Kimino Kokorowa Kagayaiterukai", 138, 138, 138, 138, "Grants a shield equal to 15/18/21/24/27% of her own Technique (30% activation rate)", "Active: If activated at the beginning of Appeal Chance, increases the Appeal stat of all members by 4% for the next 10 notes (30% activation chance)"),
+	(137, 5, 3, 1, 6, "Over Here! Hurry Up!", "After School Cat", 137, 137, 137, 137, "Increases the Voltage gain of cards of the same year group [1st years] by 5/5.3/5.6/5.9/6.2% for the next 5 notes (33% activation rate)", "Active: If activated upon completing Appeal Chance, increases the Critical rate of cards of the same attribute [Smile] by 10% for the next 10 notes (50% activation chance)"),
+	(138, 12, 2, 3, 1, "I Went for a Quick Swim", "Kimino Kokorowa Kagayaiterukai?", 138, 138, 138, 138, "Grants a shield equal to 15/18/21/24/27% of her own Technique (30% activation rate)", "Active: If activated at the beginning of Appeal Chance, increases the Appeal stat of all members by 4% for the next 10 notes (30% activation chance)"),
 	(139, 9, 3, 3, 1, "ニコの特製お弁当いかがですかぁ", "Whistle of the Morning Star", 139, 139, 139, 139, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "Active: If activated at the beginning of Appeal Chance, increases the skill activation rate of cards of the same attribute [Active] by 15% for the next 10 notes (30% activation chance)"),
-	(140, 13, 2, 1, 3, "真面目なアナウンス", "Kimino Kokorowa Kagayaiterukai", 140, 140, 140, 140, "Increases Voltage gain of cards of the same attribute [Elegant] by 4/4.3/4.6/4.9/5.2% for the next 5 notes (30% activation rate)", "Active: If activated upon switching subunits, increases Voltage gain of cards of the same attribute [Elegant] by 4% for the next 5 notes (20% activation chance)"),
+	(140, 13, 2, 1, 3, "真面目なアナウンス", "Kimino Kokorowa Kagayaiterukai?", 140, 140, 140, 140, "Increases Voltage gain of cards of the same attribute [Elegant] by 4/4.3/4.6/4.9/5.2% for the next 5 notes (30% activation rate)", "Active: If activated upon switching subunits, increases Voltage gain of cards of the same attribute [Elegant] by 4% for the next 5 notes (20% activation chance)"),
 	(141, 17, 3, 2, 5, "それじゃ、レッツゴー♪", "Whistle of the Morning Star", 141, 141, 141, 141, "Recovers Stamina equal to 20/22/24/26/28% of own Stamina (33% activation rate)", "Active: If activated at the beginning of Appeal Chance, reduces damage taken by 5% until the end of the Appeal Chance (30% activation chance)"),
 	(142, 1, 2, 1, 6, "お荷物のせますね～", "Snow halation", 142, 142, 142, 142, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (30% activation rate)", "Active: If activated at the beginning of the Live, increases the Voltage gain of cards of the same attribute [Smile] by 3% for the remainder of the Live (30% activation chance)"),
 	(143, 27, 2, 4, 1, "にっこりんな飾りつけ", "Exciting Animal", 143, 143, 143, 143, "Increases the Voltage boost of the next SP skill by 20/20.5/21/21.5/22% of own Appeal (30% activation rate)", "Active: If activated at the beginning of the Live, adds 8% of own Appeal to the SP gauge (50% activation chance)"),
@@ -1269,4 +1302,12 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
 	(232, 24, 3, 2, 4, "天国が見える……", "Steam Celestial Maiden", 232, 232, 232, 232, "Reduces damage taken by 10/11/12/13/14% for the next 10 notes (33% activation rate)", "Active: If activated at the beginning of an Appeal Chance, grants a shield equal to 8% of own Stamina (40% activation chance)"),
 	(233, 9, 3, 4, 5, "おばけみたいな虫が～～～っっ！", "Steam Celestial Maiden", 233, 233, 233, 233, "Adds 5/5.5/6/6.5/7% of max SP to the SP gauge (33% activation rate)", "Active: If activated at the beginning of Appeal Chance, adds 8% of own Technique to the SP gauge (50% activation chance)"),
 	(234, 21, 2, 1, 1, "たあ―――――――っっ！！", "Marching Harmony", 234, 234, 234, 234, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (30% activation rate)", "Active: If activated upon Appeal Chance completion, increases the Appeal stat of all other team members by 7% for the next 5 notes (80% activation chance)"),
-	(235, 10, 2, 3, 2, "もう1回温泉行って来るね", "Brightest Melody", 235, 235, 235, 235, "Increases the Appeal stat of all members by 1/1.3/1.6/1.9/2.2% for the next 5 notes (30% activation rate)", "Active: If activated at the beginning of an Appeal Chance, increases her own skill activation rate by 8% for the next 10 notes (30% activation chance)");
+	(235, 10, 2, 3, 2, "もう1回温泉行って来るね", "Brightest Melody", 235, 235, 235, 235, "Increases the Appeal stat of all members by 1/1.3/1.6/1.9/2.2% for the next 5 notes (30% activation rate)", "Active: If activated at the beginning of an Appeal Chance, increases her own skill activation rate by 8% for the next 10 notes (30% activation chance)"),
+	(236, 17, 3, 4, 6, "私たちの色", "Colorful Splash", 236, 236, 236, 236, "Increases the Voltage boost of the next SP skill by 30/30.5/31/31.5/32% of own Appeal (33% activation rate)", "Active: If activated on her own Critical taps, increases the Voltage boost of the next SP skill by 20% of own Technique (20% activation chance)"),
+	(237, 4, 2, 2, 2, "完成したら見せますね", "Sore wa Bokutachi no Kiseki", 237, 237, 237, 237, "Grants a shield equal to 15/18/21/24/27% of own Stamina (30% activation rate)", "Active: If activated at the beginning of Appeal Chance, reduces damage taken by 4% for the duration of the Appeal Chance (30% activation chance)"),
+	(238, 19, 3, 4, 3, "いらっしゃいませ♪", "Warm Welcome☆Chinese Maid", 238, 238, 238, 238, "Increases the Appeal stat of cards in the same subunit by 7/7.5/8/8.5/9% for the next 5 notes (33% activation rate)", "If activated upon Appeal Chance completin, adds 8% of own Appeal to the SP gauge (30% activation chance)"),
+	(239, 1, 2, 4, 2, "私に任せて！", "Sore wa Bokutachi no Kiseki", 239, 239, 239, 239, "Increases the SP gauge gain of all members by 3/3.3/3.6/3.9/4.2% for the next 5 notes (30% activation rate)", "If activated upon Appeal Chance completion, increases the SP gauge gain of all members by 8% for the next 10 notes (30% activation chance)"),
+	(240, 5, 3, 2, 1, "やっった――――！！", "Warm Welcome☆Chinya Maid", 240, 240, 240, 240, "Grants a shield equal to 20/23/26/29/32% of own Stamina (33% activation rate)", "If activated on her own taps, grants a shield equal to 4% of own Stamina (10% activation chance)"),
+	(241, 13, 3, 1, 4, "もうひと頑張りいたしましょう！", "Warm Welcome☆Chinese Maid", 241, 241, 241, 241, "Gives a Voltage boost equal to 23/26/29/32/35% of own Appeal (33% activation rate)", "Active: If activated upon switching subunits, increases Appeal of all members by 3.2% for the next 5 notes (20% activation chance)"),
+	(242, 12, 2, 2, 3, "わかめラーメンを作ってみたんだ", "Brightest Melody", 242, 242, 242, 242, "Reduces damage taken by 6/7/8/9/10% for the next 10 notes (30% activation rate)", "Active: If activated at the beginning of the Live, grants a shield equal to 20% of own Stamina (20% activation chance)"),
+	(243, 27, 2, 3, 4, "全てを正確に見極めて……えい！", "Marching Harmony", 243, 243, 243, 243, "Increases the skill activation rate of cards in the same subunit by 3.2/3.4/3.6/3.8/4% for the next 5 notes (30% activation rate)", "Active: If activated at the beginning of the Live, increases the value of Critical taps on all members by 3% for the remainder of the Live (30% activation chance)");
