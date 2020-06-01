@@ -5,10 +5,7 @@ import com.mattbock.llas.cardApi.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class CardService {
@@ -18,6 +15,15 @@ public class CardService {
 
     @Autowired
     private RefService refService;
+
+    private Map<String, Integer> memes = new HashMap<String, Integer>() {
+        {
+            put("gay riko", 229);
+            put("gay", 229);
+            put("hac", 173);
+            put("coptori", 12);
+        }
+    };
 
 
     public Iterable<Card> getAllCards() {
@@ -53,6 +59,16 @@ public class CardService {
         Integer typeId = null;
         Integer attributeId = null;
         String titleText = "%";
+
+        if(memes.get(params) != null) {
+            return new ArrayList<Card>() {
+                {
+                    add(cardRepository.findById(memes.get(params)).get());
+                }
+            };
+        }
+
+
 
         for(String token: tokens){
             if(refService.getIdolNamesIds().get(token.toLowerCase()) != null) {
