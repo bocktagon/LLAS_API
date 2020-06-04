@@ -54,12 +54,9 @@ public class CardService {
         List<String> tokens = Arrays.asList(params.split(" "));
         List<String> titleTokens = new ArrayList<>();
 
-        Integer idolId = null;
-        Integer rarityId = null;
-        Integer typeId = null;
-        Integer attributeId = null;
-        String titleText = "%";
+        // Look for special cases first
 
+        // 1. Memes
         if(memes.get(params) != null) {
             return new ArrayList<Card>() {
                 {
@@ -68,6 +65,39 @@ public class CardService {
             };
         }
 
+        // 2. <name> #
+        if(params.matches("[a-zA-Z]+[ ][0-9]+")) {
+            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesIds().get(tokens.get(0).toLowerCase()), "UR");
+
+            int requestedNum = Integer.valueOf(tokens.get(1));
+            ArrayList<Card> response = new ArrayList<>();
+            if(cards.size() > 0 && requestedNum <= cards.size()) {
+                response.add(cards.get(requestedNum - 1));
+            }
+
+            return response;
+        }
+
+        // 3. specific ID
+        if(params.matches("[0-9]+")) {
+            ArrayList<Card> response = new ArrayList<>();
+
+            Optional card = cardRepository.findById(Integer.valueOf(params));
+
+            if (card.isPresent()) {
+                response.add((Card) card.get());
+            }
+
+            return response;
+        }
+
+        // Otherwise run a general text search
+
+        Integer idolId = null;
+        Integer rarityId = null;
+        Integer typeId = null;
+        Integer attributeId = null;
+        String titleText = "%";
 
 
         for(String token: tokens){
