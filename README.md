@@ -10,7 +10,8 @@ API for cards in Love Live All Stars to support various apps.
 The goal of text search is to take any free text sent to the API and try to discern what card they are looking for without having to enforce a strict format. Currently the search will look for specific elements of a card that may be specified in the params, pull those out, and check the rest of the params against card titles.
 
 Currently supported searchable elements:
-- First name
+- First names, and the following nicknames:
+    - honk, birb, nozo, pana, yohane, maru, pomu, kasu, kasukasu
 - Rarity
     - R, SR, UR
 - Type
@@ -21,9 +22,17 @@ Currently supported searchable elements:
 - Title 
     - Checks normal and idolized
 
+Special cases:
+- "\<name\> #"
+    - Search for a specific UR based on the order it came out. Ex: "Rina 2" returns Vegetable Wonderland Rina
+- id search
+    - Just giving a number will search by in-game school idol number. Ex: 112 is Blu Amor Umi
+- "new" keyword
+    - Returns the newest card that matches a search. Ex: "new Riko" returns Riko's newest card. "new Riko SR" return's Riko's newest SR.
+
 Other planned searchable elements:
 - Card Source
-    - initial (in game at the start)
+    - initial (in game at launch)
     - event (event reward)
     - gacha (normal gacha)
     - fes (fes gacha)
