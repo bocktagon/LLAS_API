@@ -34,6 +34,7 @@ public class RefService {
 
 
     private Map<String, Integer> idolNamesIds;
+    private Map<String, Integer> idolNamesAndNicknamesIds;
     private Map<String, Integer> rarityAbbreviationsIds;
     private Map<String, Integer> typeNamesIds;
     private Map<String, Integer> typeAbbreviationsIds;
@@ -47,6 +48,11 @@ public class RefService {
     public Map<String, Integer> getIdolNamesIds() {
         verifyIdolNamesMap();
         return idolNamesIds;
+    }
+
+    public Map<String, Integer> getIdolNamesAndNicknamesIds() {
+        verifyIdolNamesAndNicknamesMap();
+        return idolNamesAndNicknamesIds;
     }
 
     //--------------------------------------------------------------------IdolGroups
@@ -105,6 +111,28 @@ public class RefService {
                     for(Idol idol : idolRepository.findAll()) {
                         put(idol.getFirstName().toLowerCase(), idol.getId());
                     }
+                }
+            };
+        }
+    }
+
+    private void verifyIdolNamesAndNicknamesMap() {
+        if (idolNamesAndNicknamesIds == null) {
+            idolNamesAndNicknamesIds = new HashMap<String, Integer>() {
+                {
+                    for(Idol idol : idolRepository.findAll()) {
+                        put(idol.getFirstName().toLowerCase(), idol.getId());
+                    }
+
+                    put("honk", 1);
+                    put("birb", 3);
+                    put("nozo", 7);
+                    put("pana", 8);
+                    put("yohane", 15);
+                    put("maru", 16);
+                    put("pomu", 19);
+                    put("kasu", 20);
+                    put("kasukasu", 20);
                 }
             };
         }

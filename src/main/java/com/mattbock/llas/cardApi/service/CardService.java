@@ -22,6 +22,8 @@ public class CardService {
             put("gay", 229);
             put("hac", 173);
             put("coptori", 12);
+            put("meme yoshiko", 145);
+            put("meme yohane", 145);
         }
     };
 
@@ -51,23 +53,22 @@ public class CardService {
     }
 
     public Iterable<Card> textSearch(String params) {
-        List<String> tokens = Arrays.asList(params.split(" "));
-        List<String> titleTokens = new ArrayList<>();
+        List<String> tokens = new ArrayList<>(Arrays.asList(params.split(" ")));
 
         // Look for special cases first
 
         // 1. Memes
-        if(memes.get(params) != null) {
+        if(memes.get(params.toLowerCase()) != null) {
             return new ArrayList<Card>() {
                 {
-                    add(cardRepository.findById(memes.get(params)).get());
+                    add(cardRepository.findById(memes.get(params.toLowerCase())).get());
                 }
             };
         }
 
         // 2. <name> #
         if(params.matches("[a-zA-Z]+[ ][0-9]+")) {
-            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesIds().get(tokens.get(0).toLowerCase()), "UR");
+            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesAndNicknamesIds().get(tokens.get(0).toLowerCase()), "UR");
 
             int requestedNum = Integer.valueOf(tokens.get(1));
             ArrayList<Card> response = new ArrayList<>();
@@ -91,18 +92,38 @@ public class CardService {
             return response;
         }
 
-        // Otherwise run a general text search
+        // 4. Keywords
+        // "new" returns the most recent card that matches a search
+        if(tokens.contains("new")) {
+            tokens.remove("new");
+            List<Card> searchResults = runGeneralTextSearch(tokens);
 
+            // If the search comes back empty or with only 1 result
+            if(searchResults.size() < 2) {
+                return searchResults;
+            }
+
+            // Otherwise just return the most recent card
+            return searchResults.subList(searchResults.size() - 1, searchResults.size());
+        }
+
+        // Otherwise run a general text search
+        return runGeneralTextSearch(tokens);
+
+    }
+
+    private List<Card> runGeneralTextSearch(List<String> tokens) {
         Integer idolId = null;
         Integer rarityId = null;
         Integer typeId = null;
         Integer attributeId = null;
         String titleText = "%";
+        List<String> titleTokens = new ArrayList<>();
 
 
         for(String token: tokens){
-            if(refService.getIdolNamesIds().get(token.toLowerCase()) != null) {
-                idolId = refService.getIdolNamesIds().get(token.toLowerCase());
+            if(refService.getIdolNamesAndNicknamesIds().get(token.toLowerCase()) != null) {
+                idolId = refService.getIdolNamesAndNicknamesIds().get(token.toLowerCase());
             }
             else if (refService.getRarityAbbreviationsIds().get(token.toLowerCase()) != null) {
                 rarityId = refService.getRarityAbbreviationsIds().get(token.toLowerCase());
