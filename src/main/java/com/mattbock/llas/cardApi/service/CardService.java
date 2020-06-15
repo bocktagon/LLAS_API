@@ -24,6 +24,7 @@ public class CardService {
             put("coptori", 12);
             put("meme yoshiko", 145);
             put("meme yohane", 145);
+            put("fesuna", 146);
         }
     };
 
@@ -66,11 +67,24 @@ public class CardService {
             };
         }
 
-        // 2. <name> #
-        if(params.matches("[a-zA-Z]+[ ][0-9]+")) {
-            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesAndNicknamesIds().get(tokens.get(0).toLowerCase()), "UR");
+        // 2. <name> <rarity(opt)> #
+        if(params.matches("[a-zA-Z]+\\s(r\\s|R\\s|sr\\s|SR\\s|ur\\s|UR\\s)?[0-9]+")) {
 
-            int requestedNum = Integer.valueOf(tokens.get(1));
+            String rarity = "UR";
+            if(tokens.size() == 3) {
+                rarity = tokens.get(1);
+            }
+
+            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesAndNicknamesIds().get(tokens.get(0).toLowerCase()), rarity.toUpperCase());
+
+            int requestedNum;
+            if(tokens.size() == 3) {
+                requestedNum = Integer.valueOf(tokens.get(2));
+            } else {
+                requestedNum = Integer.valueOf(tokens.get(1));
+            }
+
+
             ArrayList<Card> response = new ArrayList<>();
             if(cards.size() > 0 && requestedNum <= cards.size()) {
                 response.add(cards.get(requestedNum - 1));

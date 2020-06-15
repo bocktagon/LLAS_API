@@ -288,7 +288,7 @@ INSERT INTO llas_cards.passive_abilities (id, ability_text, buff_type_id, buff_t
 	(219, "Buffs the Technique stat of 1st year cards by 2/2.3/2.6/2.9/3.2%", 3, 9, 2, 2.3, 2.6, 2.9, 3.2),
 	(220, "Buffs the Appeal stat of 1st year cards by 3/3.3/3.6/3.9/4.2%", 1, 9, 3, 3.3, 3.6, 3.9, 4.2),
 	(221, "Buffs the Technique stat of Elegant cards by 2/2.3/2.6/2.9/3.2%", 3, 5, 2, 2.3, 2.6, 2.9, 3.2),
-	(222, "Buffs the Stamina stat of all cards by 3/3.3/3.6/3.9/3.2%", 2, 4, 3, 3.3, 3.6, 3.9, 3.2),
+	(222, "Buffs the Stamina stat of all cards by 3/3.3/3.6/3.9/3.2%", 2, 4, 3, 3.3, 3.6, 3.9, 4.2),
 	(223, "Buffs the Appeal stat of Elegant cards by 3/3.3/3.6/3.9/4.2%", 1, 5, 3, 3.3, 3.6, 3.9, 4.2),
 	(224, "Buffs the Stamina stat of Gd cards by 2/2.3/2.6/2.9/3.2%", 2, 6, 2, 2.3, 2.6, 2.9, 3.2),
 	(225, "Buffs the Technique stat of Cool cards by 2/2.3/2.6/2.9/3.2%", 3, 5, 2, 2.3, 2.6, 2.9, 3.2),
@@ -319,7 +319,9 @@ INSERT INTO llas_cards.passive_abilities (id, ability_text, buff_type_id, buff_t
 	(250, "Buffs the Technique stat of cards in the same strategy by 5/5.5/6/6.5/7%", 3, 2, 5, 5.5, 6, 6.5, 7),
 	(251, "Buffs the Appeal stat of all cards by 2/2.3/2.6/2.9/3.2%", 1, 4, 2, 2.3, 2.6, 2.9, 3.2),
 	(252, "Buffs the Stamina stat of all other cards by 3/3.3/3.6/3.9/4.2", 2, 3, 3, 3.3, 3.6, 3.9, 4.2),
-	(253, "buffs the Technique stat of 2nd year cards by 2/2.3/2.6/2.9/3.2%", 3, 9, 2, 2.3, 2.6, 2.9, 3.2);
+	(253, "Buffs the Technique stat of 2nd year cards by 2/2.3/2.6/2.9/3.2%", 3, 9, 2, 2.3, 2.6, 2.9, 3.2),
+	(254, "Buffs the Stamina stat of cards in the same strategy by 5/5.5/6/6.5/7%", 2, 2, 5, 5.5, 6, 6.5, 7),
+	(255, "Buffs the Technique stat of Pure cards by 2/2.3/2.6/2.9/3.2%", 3, 5, 2, 2.3, 2.6, 2.9, 3.2);
 
 
 INSERT INTO llas_cards.rarities (id, abbreviation, name) VALUES
@@ -567,7 +569,7 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(223, 4224, 4502, 5336, 6448, 7004, 7572),
 	(224, 2584, 2916, 3248, 3580, 4078, 4253),
 	(225, 4134, 4666, 5198, 5464, 5996, 6803),
-	(266, 6156, 6561, 7776, 9396, 10206, 11016),
+	(226, 6156, 6561, 7776, 9396, 10206, 11016),
 	(227, 4269, 5112, 5393, 5955, 7079, 7650),
 	(228, 3662, 4134, 4606, 5078, 5314, 6032),
 	(229, 4505, 5085, 5665, 5955, 6535, 7411),
@@ -594,7 +596,9 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (250, 5794, 6175, 7318, 8842, 9604, 10376),
     (251, 4104, 4374, 5184, 6264, 6804, 7344),
     (252, 1719, 1941, 2163, 2385, 2718, 2835),
-    (253, 2921, 3299, 3677, 4055, 4244, 4818);
+    (253, 2921, 3299, 3677, 4055, 4244, 4818),
+    (254, 4540, 5437, 5736, 6334, 7530, 8132),
+    (255, 3557, 4015, 4473, 4931, 5160, 5858);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 1603, 1861, 1990, 2119, 2377, 2638),
@@ -849,7 +853,9 @@ INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (250, 3603, 4077, 4788, 5262, 5736, 6450),
     (251, 3838, 4344, 5103, 5609, 6115, 6884),
     (252, 4219, 4763, 5307, 5579, 6123, 6946),
-    (253, 3184, 3594, 4004, 4209, 4619, 5243);
+    (253, 3184, 3594, 4004, 4209, 4619, 5243),
+    (254, 6732, 7618, 8947, 9833, 10719, 12060),
+    (255, 2507, 2831, 3155, 3317, 3641, 4135);
 
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
@@ -1105,7 +1111,9 @@ INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (250, 6270, 7506, 7918, 8742, 10390, 11220),
     (251, 4864, 5824, 6144, 6784, 8064, 8720),
     (252, 2668, 3012, 3356, 3700, 3872, 4393),
-    (253, 2489, 2811, 3133, 3455, 3938, 4110);
+    (253, 2489, 2811, 3133, 3455, 3938, 4110),
+    (254, 4383, 4671, 5535, 6687, 7263, 7854),
+    (255, 4390, 4956, 5522, 6088, 6937, 7238);
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
 	(1, 1, 1, 1, 6, "Otonokizaka High Second-Year", "Energetic Girl Who's All Smiles", 1, 1, 1, 1, "Increases Voltage by 200/250/300/350/400 (30% activation rate)", "n/a"),
@@ -1330,10 +1338,10 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
 	(220, 6, 3, 1, 3, "ちょ、速い速い！", "Snow Crystal", 220, 220, 220, 220, "Increases the Appeal stat of all members by 5/5.3/5.6/5.9/6.2% for the next 5 notes (33% activation rate)", "If activated at the beginning of the Live, increases the Appeal stat of cards of the same year group [1st years] by 5% for the remainder of the Live (50% activation chance)"),
 	(221, 20, 2, 3, 3, "ひえええ！足がふらふらする！", "Marching Harmony", 221, 221, 221, 221, "Grants a shield equal to 15/18/21/24/27% of own Technique (30% activation rate)", "If activated at the beginning of Appeal Chance, increases the Appeal stat of all members by 4% for the next 10 notes (30% activation chance)"),
 	(222, 25, 3, 2, 6, "アイススケート対決を始めます！", "Snow Crystal", 222, 222, 222, 222, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (33% activation rate)", "If activated at the beginning of the Live, grants a shield equal to 20% of own Stamina (40% activation chance)"),
-	(223, 5, 3, 3, 3, "どこまでだって行けちゃうにゃ～", "Sore wa Bokutachi no Kiseki", 224, 224, 224, 224, "Grants a shield equal to 17/20/23/26/29% of own Stamina (33% activation rate)", "If activated upon Appeal Chance completion, increases the Critical rate of cards of the same attribute [Elegant] by 8% for the next 5 notes (40% activation chance)"),
-	(224, 14, 2, 2, 5, "……いったたた～", "Snow Crystal", 223, 223, 223, 223, "Recovers Stamina equal to 17/20/23/26/29% of own Stamina (30% activation rate)", "If activated at the beginning of the Live, recovers Stamina equal to 10% max Stamina if your Stamina hits 0 (one time, 25% activation chance)"),
+	(223, 5, 3, 3, 3, "どこまでだって行けちゃうにゃ～", "Sore wa Bokutachi no Kiseki", 223, 223, 223, 223, "Grants a shield equal to 17/20/23/26/29% of own Stamina (33% activation rate)", "If activated upon Appeal Chance completion, increases the Critical rate of cards of the same attribute [Elegant] by 8% for the next 5 notes (40% activation chance)"),
+	(224, 14, 2, 2, 5, "……いったたた～", "Snow Crystal", 224, 224, 224, 224, "Recovers Stamina equal to 17/20/23/26/29% of own Stamina (30% activation rate)", "If activated at the beginning of the Live, recovers Stamina equal to 10% max Stamina if your Stamina hits 0 (one time, 25% activation chance)"),
 	(225, 17, 2, 1, 2, "マリバウアー！", "Brightest Melody", 225, 225, 225, 225, "Increases the Appeal stat of all members by 2/2.3/2.6/2.9/3.2% for the next 5 notes (30% activation rate)", "If activated upon Appeal Chance completion, increases the Voltage gain of all members by 2% for the remainder of the song (one time, 20% activation chance)"),
-	(226, 4, 3, 4, 3, "二人でひとつのストロー", "Yamato Nadeshiko Under the Moon", 225, 225, 225, 225, "Increases the Voltage boost of the next SP skill by 38/38.4/39/39.5/40% of own Appeal (30% activation rate)", "If activated on her own taps, add 1% of this card's technique to SP gauge (15% activation chance)"),
+	(226, 4, 3, 4, 3, "二人でひとつのストロー", "Yamato Nadeshiko Under the Moon", 226, 226, 226, 226, "Increases the Voltage boost of the next SP skill by 38/38.4/39/39.5/40% of own Appeal (30% activation rate)", "If activated on her own taps, add 1% of this card's technique to SP gauge (15% activation chance)"),
 	(227, 18, 3, 2, 3, "……受け取ってください！", "Little Devil's Temptation", 227, 227, 227, 227, "Recovers Stamina equal to 28/31/34/37/40% of own Stamina (33% activation rate)", "If activated at the beginning of Appeal Chance, reduces damage taken by 5% until the end of the Appeal Chance (30% activation chance)"),
 	(228, 19, 2, 4, 2, "ふふ、あの子らしいなあ", "Marching Harmony", 228, 228, 228, 228, "Adds 5/5.5/6/6.5/7% of max SP to the SP gauge (30% activation rate)", "If activated at the beginning of the Live, adds 8% of own Technique to the SP gauge (50% activation chance)"),
 	(229, 11, 2, 1, 1, "憧れちゃうシチュエーション", "Brightest Melody", 229, 229, 229, 229, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (30% activation rate)", "If activated upon Appeal Chance completion, increases the Appeal stat of all Riko cards by 4% for the remainder of the Live (30% activation chance)"),
@@ -1360,4 +1368,6 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
 	(250, 22, 3, 3, 5, "困るわ……そんな風に言うなんて", "Noble Princess", 250, 250, 250, 250, "Increases the Appeal stat of cards in the same subunit by 7/7.5/8/5.8/9% for the next 5 notes (33% activation rate)", "If activated on her own Critical taps, increases the skill activation rate of cards of the same attribute [Pure] by 25% for 2 notes (50% activation chance)"),
 	(251, 1, 3, 3, 1, "本物のプリンセスになれそう", "Noble Princess", 251, 251, 251, 251, "Increases the skill activateion rate of cards of the same attribute [Active] by 3.7/3.9/4.1/4.3/4.5", "If activated at the beginning of the Live, increases the Appeal stat of all cards by 5% (30% chance activation chance)"),
 	(252, 25, 2, 2, 2, "私があなたの笑顔を守ります！", "Marching Harmony", 252, 252, 252, 252, "Recovers Stamina equal to 17/20/23/26/29% of this card's stamina", "If activated at the beginning of Appeal Chance, Reduces damage taken by 3% until Appeal Chance ends (30% Activation Chance)"),
-	(253, 14, 2, 3, 1, "もうすぐできるからね～", "Brightest Melody", 253, 253, 253, 253, "Increases the Critical rate of cards in the same subunit by 5/5.5/6/6.5/7% for the next 10 notes (30% activation rate)", "If activated upon Appeal Chance completion, increases the Appeal stat of all members by 3% for the remainder of the Live (one time, 30% activation chance)");
+	(253, 14, 2, 3, 1, "もうすぐできるからね～", "Brightest Melody", 253, 253, 253, 253, "Increases the Critical rate of cards in the same subunit by 5/5.5/6/6.5/7% for the next 10 notes (30% activation rate)", "If activated upon Appeal Chance completion, increases the Appeal stat of all members by 3% for the remainder of the Live (one time, 30% activation chance)"),
+	(254, 20, 3, 2, 2, "かすみん、限界ですぅ！", "Lady Debut", 254, 254, 254, 254, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (33% activation rate)", "If activated upon taking at least 200 damage, increases the Voltage gain of cards of the same year group [1st years] by 7% for the next 2 notes (5% activation chance)"),
+	(255, 3, 2, 3, 5, "おかえりなさいませ、ご主人様", "Sore wa Bokutachi no Kiseki", 255, 255, 255, 255, "Grants a shield equal to 15/18/21/24/27% of own Technique (30% activation rate)", "If activated upon Appeal Chance completion, gives a Voltage boost equal to 30% of own Technique (30% activation chance)");
