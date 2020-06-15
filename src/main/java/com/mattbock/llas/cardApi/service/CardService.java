@@ -53,29 +53,30 @@ public class CardService {
         return cardRepository.findByCardType(type);
     }
 
-    public Iterable<Card> textSearch(String params) {
+    public Iterable<Card> textSearch(String paramsRaw) {
+        String params = paramsRaw.toLowerCase();
         List<String> tokens = new ArrayList<>(Arrays.asList(params.split(" ")));
 
         // Look for special cases first
 
         // 1. Memes
-        if(memes.get(params.toLowerCase()) != null) {
+        if(memes.get(params) != null) {
             return new ArrayList<Card>() {
                 {
-                    add(cardRepository.findById(memes.get(params.toLowerCase())).get());
+                    add(cardRepository.findById(memes.get(params)).get());
                 }
             };
         }
 
         // 2. <name> <rarity(opt)> #
-        if(params.matches("[a-zA-Z]+\\s(r\\s|R\\s|sr\\s|SR\\s|ur\\s|UR\\s)?[0-9]+")) {
+        if(params.matches("[a-z]+\\s(r\\s|sr\\s|ur\\s)?[0-9]+")) {
 
             String rarity = "UR";
             if(tokens.size() == 3) {
                 rarity = tokens.get(1);
             }
 
-            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesAndNicknamesIds().get(tokens.get(0).toLowerCase()), rarity.toUpperCase());
+            List<Card> cards = cardRepository.findByIdolIdAndRarity(refService.getIdolNamesAndNicknamesIds().get(tokens.get(0)), rarity.toUpperCase());
 
             int requestedNum;
             if(tokens.size() == 3) {
@@ -136,23 +137,23 @@ public class CardService {
 
 
         for(String token: tokens){
-            if(refService.getIdolNamesAndNicknamesIds().get(token.toLowerCase()) != null) {
-                idolId = refService.getIdolNamesAndNicknamesIds().get(token.toLowerCase());
+            if(refService.getIdolNamesAndNicknamesIds().get(token) != null) {
+                idolId = refService.getIdolNamesAndNicknamesIds().get(token);
             }
-            else if (refService.getRarityAbbreviationsIds().get(token.toLowerCase()) != null) {
-                rarityId = refService.getRarityAbbreviationsIds().get(token.toLowerCase());
+            else if (refService.getRarityAbbreviationsIds().get(token) != null) {
+                rarityId = refService.getRarityAbbreviationsIds().get(token);
             }
-            else if (refService.getTypeAbbreviationsIds().get(token.toLowerCase()) != null) {
-                typeId = refService.getTypeAbbreviationsIds().get(token.toLowerCase());
+            else if (refService.getTypeAbbreviationsIds().get(token) != null) {
+                typeId = refService.getTypeAbbreviationsIds().get(token);
             }
-            else if (refService.getTypeNamesIds().get(token.toLowerCase()) != null) {
-                typeId = refService.getTypeNamesIds().get(token.toLowerCase());
+            else if (refService.getTypeNamesIds().get(token) != null) {
+                typeId = refService.getTypeNamesIds().get(token);
             }
-            else if (refService.getAttributeNamesIds().get(token.toLowerCase()) != null) {
-                attributeId = refService.getAttributeNamesIds().get(token.toLowerCase());
+            else if (refService.getAttributeNamesIds().get(token) != null) {
+                attributeId = refService.getAttributeNamesIds().get(token);
             }
             else {
-                titleTokens.add(token.toLowerCase());
+                titleTokens.add(token);
             }
         }
 
