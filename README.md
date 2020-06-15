@@ -23,8 +23,9 @@ Currently supported searchable elements:
     - Checks normal and idolized
 
 Special cases:
-- "\<name\> #"
-    - Search for a specific UR based on the order it came out. Ex: "Rina 2" returns Vegetable Wonderland Rina
+- "\<name\> \<rarity(optional)\> #"
+    - Search for a specific card based on the order it came out. Ex: "Rina UR 2" returns Vegetable Wonderland Rina. "Riko SR 2" will return KimiKoko Riko.
+    - If you don't specify a rarity, it will search through URs.
 - id search
     - Just giving a number will search by in-game school idol number. Ex: 112 is Blu Amor Umi
 - "new" keyword
