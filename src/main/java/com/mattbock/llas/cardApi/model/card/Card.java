@@ -31,6 +31,10 @@ public class Card {
     @JoinColumn(name = "attribute_id")
     private Attribute attribute;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "card_source_id")
+    private CardSource cardSource;
+
     @OneToOne
     @JoinColumn(name = "appeal_id")
     private Appeal appeal;
@@ -104,6 +108,14 @@ public class Card {
 
     public void setAttribute(Attribute attribute) {
         this.attribute = attribute;
+    }
+
+    public CardSource getCardSource() {
+        return cardSource;
+    }
+
+    public void setCardSource(CardSource cardSource) {
+        this.cardSource = cardSource;
     }
 
     public Appeal getAppeal() {

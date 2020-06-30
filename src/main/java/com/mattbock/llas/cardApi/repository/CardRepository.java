@@ -28,10 +28,12 @@ public interface CardRepository extends CrudRepository<Card, Integer> {
             "AND (:rarityId is null OR card.rarity.id = :rarityId) " +
             "AND (:typeId is null OR card.cardType.id = :typeId) " +
             "AND (:attributeId is null OR card.attribute.id = :attributeId)" +
+            "AND (:sourceId is null OR card.cardSource.id = :sourceId)" +
             "AND (card.title LIKE :titleText OR card.idolizedTitle LIKE :titleText)")
     List<Card> findByTextSearch(@Param("idolId") Integer idolId,
                                 @Param("rarityId") Integer rarityId,
                                 @Param("typeId") Integer typeId,
                                 @Param("attributeId") Integer attributeId,
+                                @Param("sourceId") Integer sourceId,
                                 @Param("titleText") String titleText);
 }

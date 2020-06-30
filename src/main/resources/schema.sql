@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS rarities;
 DROP TABLE IF EXISTS card_types;
 DROP TABLE IF EXISTS attributes;
+DROP TABLE IF EXISTS card_sources;
 DROP TABLE IF EXISTS appeals;
 DROP TABLE IF EXISTS staminas;
 DROP TABLE IF EXISTS techniques;
@@ -96,6 +97,12 @@ CREATE TABLE attributes (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE card_sources (
+    id smallint NOT NULL,
+    name varchar(7) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE appeals (
     id int NOT NULL,
     lb0 int NOT NULL,
@@ -135,6 +142,7 @@ CREATE TABLE cards (
     rarity_id smallint NOT NULL,
     card_type_id smallint NOT NULL,
     attribute_id smallint NOT NULL,
+    card_source_id smallint NOT NULL,
     title varchar(100) NOT NULL,
     idolized_title varchar(100) NOT NULL,
     appeal_id int NOT NULL,
@@ -147,6 +155,7 @@ CREATE TABLE cards (
     FOREIGN KEY (idol_id) REFERENCES idols(id),
     FOREIGN KEY (rarity_id) REFERENCES rarities(id),
     FOREIGN KEY (card_type_id) REFERENCES card_types(id),
+    FOREIGN KEY (card_source_id) REFERENCES card_sources(id),
     FOREIGN KEY (attribute_id) REFERENCES attributes(id),
     FOREIGN KEY (appeal_id) REFERENCES appeals(id),
     FOREIGN KEY (stamina_id) REFERENCES staminas(id),

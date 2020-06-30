@@ -1,6 +1,7 @@
 package com.mattbock.llas.cardApi.service;
 
 import com.mattbock.llas.cardApi.model.card.Attribute;
+import com.mattbock.llas.cardApi.model.card.CardSource;
 import com.mattbock.llas.cardApi.model.card.CardType;
 import com.mattbock.llas.cardApi.model.card.Rarity;
 import com.mattbock.llas.cardApi.model.idol.Idol;
@@ -31,6 +32,8 @@ public class RefService {
     private AttributeRepository attributeRepository;
     @Autowired
     private SubunitRepository subunitRepository;
+    @Autowired
+    private CardSourceRepository cardSourceRepository;
 
 
     private Map<String, Integer> idolNamesIds;
@@ -39,8 +42,9 @@ public class RefService {
     private Map<String, Integer> typeNamesIds;
     private Map<String, Integer> typeAbbreviationsIds;
     private Map<String, Integer> attributeNamesIds;
+    private Map<String, Integer> cardSourcesIds;
 
-    //--------------------------------------------------------------------Idols
+    //--------------------------------------------------------------------------------Idols
     public Iterable<Idol> getIdols() {
         return idolRepository.findAll();
     }
@@ -55,12 +59,12 @@ public class RefService {
         return idolNamesAndNicknamesIds;
     }
 
-    //--------------------------------------------------------------------IdolGroups
+    //--------------------------------------------------------------------------------IdolGroups
     public Iterable<IdolGroup> getIdolGroups() {
         return idolGroupRespository.findAll();
     }
 
-    //--------------------------------------------------------------------Rarities
+    //--------------------------------------------------------------------------------Rarities
     public Iterable<Rarity> getRarities() {
         return rarityRepository.findAll();
     }
@@ -70,12 +74,12 @@ public class RefService {
         return rarityAbbreviationsIds;
     }
 
-    //--------------------------------------------------------------------Schools
+    //--------------------------------------------------------------------------------Schools
     public Iterable<School> getSchools() {
         return schoolRepository.findAll();
     }
 
-    //--------------------------------------------------------------------CardTypes
+    //--------------------------------------------------------------------------------CardTypes
     public Iterable<CardType> getCardTypes() {
         return cardTypeRepository.findAll();
     }
@@ -90,7 +94,7 @@ public class RefService {
         return typeAbbreviationsIds;
     }
 
-    //--------------------------------------------------------------------Attributes
+    //--------------------------------------------------------------------------------Attributes
     public Iterable<Attribute> getAttributes() {
         return attributeRepository.findAll();
     }
@@ -99,9 +103,35 @@ public class RefService {
         veryfyAttributeNamesMap();
         return attributeNamesIds;
     }
-    //--------------------------------------------------------------------Subunits
+
+    //--------------------------------------------------------------------------------Subunits
     public Iterable<Subunit> getSubunits() {
         return subunitRepository.findAll();
+    }
+
+
+    //--------------------------------------------------------------------------------Sources
+    public Iterable<CardSource> getCardSources() {
+        return cardSourceRepository.findAll();
+    }
+
+    public Map<String, Integer> getCardSourcesIds() {
+        verifyCardSourcesMap();
+        return cardSourcesIds;
+    }
+
+    private void verifyCardSourcesMap() {
+        if(cardSourcesIds == null) {
+            cardSourcesIds = new HashMap<String, Integer>() {
+                {
+                    for(CardSource cardSource : cardSourceRepository.findAll()) {
+                        put(cardSource.getName().toLowerCase(), cardSource.getId());
+                    }
+
+                    put("fest", 4);
+                }
+            };
+        }
     }
 
     private void verifyIdolNamesMap() {

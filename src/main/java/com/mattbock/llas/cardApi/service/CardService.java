@@ -132,6 +132,7 @@ public class CardService {
         Integer rarityId = null;
         Integer typeId = null;
         Integer attributeId = null;
+        Integer sourceId = null;
         String titleText = "%";
         List<String> titleTokens = new ArrayList<>();
 
@@ -151,6 +152,9 @@ public class CardService {
             }
             else if (refService.getAttributeNamesIds().get(token) != null) {
                 attributeId = refService.getAttributeNamesIds().get(token);
+            }
+            else if (refService.getCardSourcesIds().get(token) != null) {
+                sourceId = refService.getCardSourcesIds().get(token);
             }
             else {
                 titleTokens.add(token);
@@ -174,6 +178,6 @@ public class CardService {
             titleText = builder.toString();
         }
 
-        return cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, titleText);
+        return cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, sourceId, titleText);
     }
 }
