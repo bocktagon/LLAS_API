@@ -185,7 +185,7 @@ public class CardService {
 
         List<Card> results = cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, sourceId, titleText);
 
-        if (indexToReturn > 0) {
+        if (indexToReturn >= 0) {
             return results.subList(indexToReturn, indexToReturn + 1);
         }
 
