@@ -136,6 +136,11 @@ public class CardService {
         String titleText = "%";
         List<String> titleTokens = new ArrayList<>();
 
+        int indexToReturn = -1;
+        if(tokens.get(tokens.size() - 1).matches("\\d+")) {
+            indexToReturn = Integer.valueOf(tokens.get(tokens.size() - 1)) - 1;
+            tokens.remove(tokens.size() - 1);
+        }
 
         for(String token: tokens){
             if(refService.getIdolNamesAndNicknamesIds().get(token) != null) {
@@ -178,6 +183,12 @@ public class CardService {
             titleText = builder.toString();
         }
 
-        return cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, sourceId, titleText);
+        List<Card> results = cardRepository.findByTextSearch(idolId, rarityId, typeId, attributeId, sourceId, titleText);
+
+        if (indexToReturn > 0) {
+            return results.subList(indexToReturn, indexToReturn + 1);
+        }
+
+        else return results;
     }
 }
