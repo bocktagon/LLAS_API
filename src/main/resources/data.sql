@@ -12,7 +12,8 @@ INSERT INTO llas_cards.subunits (id, name) VALUES
     (6, "Guilty Kiss"),
     (7, "DiverDiva"),
     (8, "A ZU NA"),
-    (9, "QU4RTZ");
+    (9, "QU4RTZ"),
+    (10, "Shioriko");
 
 INSERT INTO llas_cards.idol_groups (id, name) VALUES
     (1, "Mu's"),
@@ -46,7 +47,8 @@ INSERT INTO llas_cards.idols (id, first_name, last_name, color, school_id, year,
     (24, "Kanata", "Konoe", "#d299de", 3, 3, 3, 9),
     (25, "Setsuna", "Yuki", "#fd767a", 3, 2, 3, 8),
     (26, "Emma", "Verde", "#a6e37b", 3, 3, 3, 9),
-    (27, "Rina", "Tennoji", "#aeabae", 3, 1, 3, 9);
+    (27, "Rina", "Tennoji", "#aeabae", 3, 1, 3, 9),
+    (28, "Shioriko", "Mifune", "#95E5CC", 3, 1, 3, 10);
 
 INSERT INTO llas_cards.buff_types (id, type) VALUES
     (1, "appeal"),
