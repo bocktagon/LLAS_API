@@ -18,13 +18,20 @@ public class CardService {
 
     private Map<String, Integer> memes = new HashMap<String, Integer>() {
         {
-            put("gay riko", 229);
             put("gay", 229);
             put("hac", 173);
             put("coptori", 12);
             put("meme yoshiko", 145);
             put("meme yohane", 145);
             put("fesuna", 146);
+            put("broken", 146);
+            put("screeching nico", 233);
+            put("cabbage rina", 215);
+            put("step", 129);
+            put("thicc step", 193);
+            put("gay step", 248);
+            put("my face e no ippo", 238);
+            put("wheelchair maki", 220);
         }
     };
 
