@@ -32,6 +32,13 @@ public class CardService {
             put("gay step", 248);
             put("my face e no ippo", 238);
             put("wheelchair maki", 220);
+            put("exodia the forbidden one", 189);
+            put("exodia", 189);
+            put("right arm of the forbidden one", 117);
+            put("left arm of the forbidden one", 220);
+            put("right leg of the forbidden one", 225);
+            put("left leg of the forbidden one", 272);
+            put("sideways maki", 272);
         }
     };
 
