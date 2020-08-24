@@ -149,6 +149,7 @@ CREATE TABLE cards (
     stamina_id int NOT NULL,
     technique_id int NOT NULL,
     passive_ability_id int NOT NULL,
+    secondary_passive_ability_id int,
     primary_active_ability_text varchar(200) NOT NULL,
     secondary_active_ability_text varchar(200),
     PRIMARY KEY (id),
@@ -160,5 +161,6 @@ CREATE TABLE cards (
     FOREIGN KEY (appeal_id) REFERENCES appeals(id),
     FOREIGN KEY (stamina_id) REFERENCES staminas(id),
     FOREIGN KEY (technique_id) REFERENCES techniques(id),
-    FOREIGN KEY (passive_ability_id) REFERENCES passive_abilities(id)
+    FOREIGN KEY (passive_ability_id) REFERENCES passive_abilities(id),
+    FOREIGN KEY (secondary_passive_ability_id) REFERENCES passive_abilities(id)
 );

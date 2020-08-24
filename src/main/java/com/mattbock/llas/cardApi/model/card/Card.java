@@ -51,6 +51,10 @@ public class Card {
     @JoinColumn(name = "passive_ability_id")
     private PassiveAbility passiveAbility;
 
+    @OneToOne
+    @JoinColumn(name = "secondary_passive_ability_id")
+    private PassiveAbility secondaryPassiveAbility;
+
     private String primaryActiveAbilityText;
     private String secondaryActiveAbilityText;
 
@@ -148,6 +152,14 @@ public class Card {
 
     public void setPassiveAbility(PassiveAbility passiveAbility) {
         this.passiveAbility = passiveAbility;
+    }
+
+    public PassiveAbility getSecondaryPassiveAbility() {
+        return secondaryPassiveAbility;
+    }
+
+    public void setSecondaryPassiveAbility(PassiveAbility secondaryPassiveAbility) {
+        this.secondaryPassiveAbility = secondaryPassiveAbility;
     }
 
     public String getPrimaryActiveAbilityText() {
