@@ -27,9 +27,9 @@ public class CardService {
             put("broken", 146);
             put("screeching nico", 233);
             put("cabbage rina", 215);
-            put("step", 129);
-            put("thicc step", 193);
-            put("gay step", 248);
+            put("step on me", 129);
+            put("thicc step on me", 193);
+            put("gay step on me", 248);
             put("my face e no ippo", 238);
             put("wheelchair maki", 220);
             put("exodia the forbidden one", 189);
@@ -39,6 +39,7 @@ public class CardService {
             put("right leg of the forbidden one", 225);
             put("left leg of the forbidden one", 272);
             put("sideways maki", 272);
+            put("mom ass", 298);
         }
     };
 
