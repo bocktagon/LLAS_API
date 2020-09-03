@@ -379,7 +379,13 @@ INSERT INTO llas_cards.passive_abilities (id, ability_text, buff_type_id, buff_t
     (301, "Buffs the Appeal stat of cards in the same strategy by 5/5.5/6/6.5/7%", 1, 2, 5, 5.5, 6, 6.5, 7),
     (302, "Buffs the Stamina stat of Active cards by 4/4.3/4.6/4.9/5.2%", 2, 5, 4, 4.3, 4.6, 4.9, 5.2),
     (303, "Buffs the Technique stat of cards in the same strategy by 3/3.5/4/4.5/5%", 3, 2, 3, 3.5, 4, 4.5, 5),
-    (304, "Buffs the Stamina stat of Cool cards by 2/2.3/2.6/2.9/3.2%", 2, 5, 2, 2.3, 2.6, 2.9, 3.2);
+    (304, "Buffs the Stamina stat of Cool cards by 2/2.3/2.6/2.9/3.2%", 2, 5, 2, 2.3, 2.6, 2.9, 3.2),
+    (305, "Buffs the Technique stat of all cards by 3/3.3/3.6/3.9/4.2%", 3, 4, 3, 3.3, 3.6, 3.9, 4.2),
+    (306, "Buffs the Technique stat of cards in the same strategy by 3/3.5/4/4.5/5%", 3, 2, 3, 3.5, 4, 4.5, 5),
+    (307, "Buffs the Stamina stat of all cards by 3/3.5/4/4.5/5%", 2, 4, 3, 3.5, 4, 4.5, 5),
+    (308, "Buffs the Appeal stat of Elegant cards by 4/4.3/4.6/4.9/5.2%", 1, 5, 4, 4.3, 4.6, 4.9, 5.2),
+    (309, "Buffs the Appeal stat of Cool cards by 2/2.3/2.6/2.9/3.2%", 1, 5, 2, 2.3, 2.6, 2.9, 3.2),
+    (310, "Buffs the Technique stat of Active cards by 2/2.3/2.6/2.9/3.2%", 3, 5, 2, 2.3, 2.6, 2.9, 3.2);
 
 
 INSERT INTO llas_cards.rarities (id, abbreviation, name) VALUES
@@ -705,7 +711,13 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (301, 6954, 7868, 9239, 10153, 11067, 12444),
     (302, 5039, 6032, 6363, 7025, 8349, 9020),
     (303, 4366, 4930, 5494, 6058, 6340, 7191),
-    (304, 3191, 3603, 4015, 4427, 5045, 5263);
+    (304, 3191, 3603, 4015, 4427, 5045, 5263),
+    (305, 5905, 6293, 7457, 9009, 9785, 10567),
+    (306, 3726, 4206, 4686, 5166, 5406, 6140),
+    (307, 3402, 4074, 4298, 4746, 5642, 6099),
+    (308, 4788, 5103, 6048, 7308, 7938, 8568),
+    (309, 3688, 4164, 4640, 4878, 5354, 6082),
+    (310, 3517, 3971, 4425, 4879, 5106, 5793);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 1603, 1861, 1990, 2119, 2377, 2638),
@@ -1011,7 +1023,13 @@ INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (301, 3993, 4256, 5045, 6097, 6623, 7153),
     (302, 7120, 8056, 9460, 10396, 11332, 12754),
     (303, 3085, 3483, 3881, 4080, 4478, 5086),
-    (304, 4261, 4811, 5361, 5636, 6186, 7017);
+    (304, 4261, 4811, 5361, 5636, 6186, 7017),
+    (305, 4468, 5350, 5644, 6232, 7408, 7996),
+    (306, 2445, 2761, 3077, 3235, 3551, 4033),
+    (307, 5768, 6526, 7663, 8421, 9179, 10322),
+    (308, 4788, 5418, 6363, 6993, 7623, 8568),
+    (309, 2984, 3370, 3756, 4142, 4335, 4923),
+    (310, 2376, 2682, 2988, 3294, 3753, 3909);
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 2882, 3114, 3346, 3810, 4274, 4750),
@@ -1317,7 +1335,13 @@ INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (301, 6430, 7699, 8122, 8968, 10660, 11509),
     (302, 5206, 5549, 6578, 7950, 8636, 9332),
     (303, 3191, 3603, 4015, 4427, 5045, 5263),
-    (304, 3191, 3603, 4015, 4427, 4633, 5263);
+    (304, 3191, 3603, 4015, 4427, 4633, 5263),
+    (305, 5586, 6320, 7421, 8155, 8889, 9996),
+    (306, 4471, 5047, 5623, 6199, 7063, 7367),
+    (307, 3927, 4185, 4959, 5991, 6507, 7038),
+    (308, 6384, 7644, 8064, 8904, 10584, 11424),
+    (309, 2110, 2382, 2654, 2926, 3334, 3475),
+    (310, 2898, 3272, 3646, 3833, 4207, 4777);
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, card_source_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
 	(1, 1, 1, 1, 6, 1, "Otonokizaka High Second-Year", "Energetic Girl Who's All Smiles", 1, 1, 1, 1, "Increases Voltage by 200/250/300/350/400 (30% activation rate)", "n/a"),
@@ -1623,7 +1647,13 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
     (301, 1, 3, 1, 6, 4, "ほらほら、じっとして〜", "Cosmic driver", 301, 301, 301, 301, "Increases the Appeal stat of cards in the same strategy by 7/7.5/8/8.5/9%", "At the beginning of the Live, add 100% of this card's appeal to voltage (100% activation chance)"),
     (302, 11, 3, 2, 1, 4, "私とあなた、二人だけの時間", "Rose Melody", 302, 302, 302, 302, "Recovers Stamina equal to 28/31/34/37/40% of own Stamina (33% activation rate)", "If activated on her own taps, Increases Voltage gain of Active cards by 8% for 2 notes (15% activation chance)"),
     (303, 7, 2, 3, 6, 4, "神様に聞いてみる？", "Wonderful Rush", 303, 303, 303, 303, "Increases the Appeal stat of cards in the same strategy by 5/5.5/6/6.5/7% for 5 notes (30% activation rate)", "At the beginning of the Live, Increase voltage gain from critical notes of cards in the same strategy by 1.5%"),
-    (304, 26, 2, 2, 2, 4, "ふわふわで、カラフルでキラキラ", "Love U my friends", 304, 304, 304, 304, "Reduces Stamina damage by 7/8/9/10/11% for 10 notes (30% activation chance)", "If activated upon switching subunits, cleanses all stat reduction effects (except base stat reductions) (23% activation chance)");
+    (304, 26, 2, 2, 2, 4, "ふわふわで、カラフルでキラキラ", "Love U my friends", 304, 304, 304, 304, "Reduces Stamina damage by 7/8/9/10/11% for 10 notes (30% activation chance)", "If activated upon switching subunits, cleanses all stat reduction effects (except base stat reductions) (23% activation chance)"),
+    (305, 3, 3, 4, 6, 2, "２人とも……そこまでにして！", "Pioneering a new World", 305, 305, 305, 305, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "Upon Appeal Chance completion, increases the Critical rate of all members by 3.9% for the next 5 notes"),
+    (306, 21, 2, 3, 4, 2, "風になったような気分", "Love U my friends", 306, 306, 306, 306, "Increases the Critical rate of cards in the same subunit by 5/5.5/6/6.5/7% for the next 10 notes (30% activation rate)", "Upon Appeal Chance completion, increases the skill activation rate of all members by 5% for the next 5 notes"),
+    (307, 10, 3, 2, 4, 3, "やるからには負けられない！", "Pioneering a new World", 307, 307, 307, 307, "Grants a shield equal to 17/20/23/26/39% of own Stamina (33% activation rate)", "Upon switching subunits, recovers Stamina equal to 60% of own Stamina (one time)"),
+    (308, 25, 3, 3, 3, 2, "やらないわけにはいきません", "Pioneering a new World", 308, 308, 308, 308, "Recovers Stamina equal to 20/23/26/29/32% of own Technique (33% activation rate)", "Upon using SP skill, increases the Appeal stat of cards in the same subunit by 3% for the remainder of the Live (one time)"),
+    (309, 6, 2, 1, 2, 3, "なんでこんなことになるのよ～！", "Wonderful Rush", 309, 309, 309, 309, "Increases the Voltage gain of cards of the same attribute [Cool] by 3/3.3/3.6/3.9/4.2% for the next 5 notes (30% activation rate)", "At the beginning of the Live, increases the skill activation rate of all members by 8% for the next 10 notes"),
+    (310, 15, 2, 4, 1, 3, "設定言うな！", "Koi ni Naritai AQUARIUM", 310, 310, 310, 310, "Increases the SP gauge gain of all members by 3/3.3/3.6/3.9/4.2% for the next 5 notes (30% activation rate)", "Upon using SP skill, recovers Stamina equal to 3% of own Technique");
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, card_source_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, secondary_passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
     (293, 19, 3, 4, 3, 2, "ぎゅってつかまってもいい？", "Present For You♡", 293, 293, 293, 293, 2932, "Increases the SP gauge gain of cards of the same attribute [Elegant] by 5.2/5.5/5.8/6.1/6.4% for the next 10 notes (33% activation rate)", "Upon using SP skill, gives a Voltage boost equal to 7% of own Appeal");

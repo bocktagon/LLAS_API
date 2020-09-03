@@ -156,6 +156,8 @@ public class RefService {
 
                     put("honk", 1);
                     put("birb", 3);
+                    put("koto", 3);
+                    put("oom", 4);
                     put("nozo", 7);
                     put("pana", 8);
                     put("yohane", 15);
