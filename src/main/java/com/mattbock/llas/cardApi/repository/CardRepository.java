@@ -18,6 +18,9 @@ public interface CardRepository extends CrudRepository<Card, Integer> {
     @Query(value="SELECT card FROM Card card WHERE card.rarity.abbreviation = :rarity OR card.rarity.name = :rarity")
     List<Card> findByRarity(@Param("rarity") String rarity);
 
+    @Query(value="SELECT count(card) FROM Card card WHERE card.rarity.abbreviation = :rarity OR card.rarity.name = :rarity")
+    long countByRarity(@Param("rarity") String rarity);
+
     List<Card> findByAttributeNameIgnoreCase(String attribute);
 
     @Query(value="SELECT card FROM Card card WHERE card.cardType.name = :type OR card.cardType.abbreviation = :type")

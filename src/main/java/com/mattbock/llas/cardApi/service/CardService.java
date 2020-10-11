@@ -16,6 +16,8 @@ public class CardService {
     @Autowired
     private RefService refService;
 
+    private Random rng = new Random();
+
     private Map<String, Integer> memes = new HashMap<String, Integer>() {
         {
             put("gay", 229);
@@ -44,6 +46,7 @@ public class CardService {
             put("left leg", 272);
             put("sideways maki", 272);
             put("mom ass", 298);
+            put("ur mom", 117);
         }
     };
 
@@ -87,6 +90,47 @@ public class CardService {
             };
         }
 
+        // 2. keywords
+        // "new" returns the most recent card that matches a search
+        if(tokens.contains("new")) {
+            tokens.remove("new");
+            List<Card> searchResults = runGeneralTextSearch(tokens);
+
+            // If the search comes back empty or with only 1 result
+            if(searchResults.size() < 2) {
+                return searchResults;
+            }
+
+            // Otherwise just return the most recent card
+            return searchResults.subList(searchResults.size() - 1, searchResults.size());
+        }
+
+        // "random" returns a random card
+        if(tokens.size() == 1 && tokens.get(0).equals("random")) {
+            long max = cardRepository.count();
+
+            ArrayList<Card> response = new ArrayList<>();
+
+            Optional card = cardRepository.findById(rng.nextInt((int) max));
+
+            if (card.isPresent()) {
+                response.add((Card) card.get());
+            }
+
+            return response;
+        }
+
+        // "pull" simulates 1 or 10 random card pulls. Doesn't support looking for specific banners.
+        if(tokens.get(0).equals("pull")) {
+            if(tokens.size() > 1 && tokens.get(1).equals("10")) {
+                return pullTen();
+            }
+
+            ArrayList<Card> response = new ArrayList<>();
+            response.add(pull(false));
+            return response;
+        }
+
         // 2. <name> <rarity(opt)> #
         if(params.matches("[a-z]+\\s(r\\s|sr\\s|ur\\s)?[0-9]+")) {
 
@@ -126,20 +170,6 @@ public class CardService {
             return response;
         }
 
-        // 4. Keywords
-        // "new" returns the most recent card that matches a search
-        if(tokens.contains("new")) {
-            tokens.remove("new");
-            List<Card> searchResults = runGeneralTextSearch(tokens);
-
-            // If the search comes back empty or with only 1 result
-            if(searchResults.size() < 2) {
-                return searchResults;
-            }
-
-            // Otherwise just return the most recent card
-            return searchResults.subList(searchResults.size() - 1, searchResults.size());
-        }
 
         // Otherwise run a general text search
         return runGeneralTextSearch(tokens);
@@ -209,5 +239,52 @@ public class CardService {
         }
 
         else return results;
+    }
+
+
+    private Card pull(boolean forceSR) {
+        String rarity;
+        int raritySeed = rng.nextInt(100);
+
+        if(raritySeed < 5) {
+            rarity = "ur";
+        } else if (raritySeed < 15) {
+            rarity = "sr";
+        } else {
+            rarity = "r";
+        }
+
+        if(forceSR && rarity.equals("r")) {
+            rarity = "sr";
+        }
+
+        int resultId = rng.nextInt((int)cardRepository.countByRarity(rarity));
+
+        List<Card> queryResult = cardRepository.findByRarity(rarity);
+
+        return(queryResult.get(resultId));
+    }
+
+    private List<Card> pullTen() {
+        ArrayList<Card> result = new ArrayList<>(10);
+
+        boolean srOrBetterFound = false;
+        for(int i = 0; i < 9; i++) {
+            Card pull = pull(false);
+
+            if (!pull.getRarity().getAbbreviation().equalsIgnoreCase("r")) {
+                srOrBetterFound = true;
+            }
+
+            result.add(pull);
+        }
+
+        if(srOrBetterFound) {
+            result.add(pull(false));
+        } else {
+            result.add(pull(true));
+        }
+
+        return result;
     }
 }

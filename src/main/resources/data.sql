@@ -397,7 +397,15 @@ INSERT INTO llas_cards.passive_abilities (id, ability_text, buff_type_id, buff_t
     (319, "Buffs the Appeal stat by 5/5.5/6/6.5/7% and the Technique stat by 1.5/2/2.5/3/3.5% of cards in the same strategy", 1, 2, 5, 5.5, 6, 6.5, 7),
     (320, "Buffs the Appeal stat of Pure cards by 4/4.3/4.6/4.9/5.2%", 1, 5, 4, 4.3, 4.6, 4.9, 5.2),
     (321, "Buffs the Stamina stat of cards in the same strategy by 3/3.5/4/4.5/5%", 2, 2, 3, 3.5, 4, 4.5, 5),
-    (322, "Buffs the Appeal stat of cards in the same strategy by 3/3.5/4/4.5/5%", 1, 2, 3, 3.5, 4, 4.5, 5);
+    (322, "Buffs the Appeal stat of cards in the same strategy by 3/3.5/4/4.5/5%", 1, 2, 3, 3.5, 4, 4.5, 5),
+    (323, "Buffs the Appeal stat of Nijigaku cards by 4/4.3/4.6/4.9/5.2%", 1, 8, 4, 4.3, 4.6, 4.9, 5.2),
+    (324, "Buffs the Stamina stat of Smile cards by 2/2.3/2.6/2.9/3.2%", 2, 5, 2, 2.3, 2.6, 2.9, 3.2),
+    (325, "Buffs the Appeal stat of Cool cards by 4/4.3/4.6/4.9/5.2%", 1, 5, 4, 4.3, 4.6, 4.9, 5.2),
+    (326, "Buffs the Stamina stat of Pure cards by 4/4.3/4.6/4.9/5.2%", 2, 5, 4, 4.3, 4.6, 4.9, 5.2),
+    (327, "Buffs her own Appeal stat by 5/5.5/6/6.5/7%", 1, 1, 5, 5.5, 6, 6.5, 7),
+    (328, "Buffs her own Technique by 5/5.5/6/6.5/7%", 3, 1, 5, 5.5, 6, 6.5, 7),
+    (329, "Buffs the Appeal stat by 4/4.3/4.6/4.9/5.2% and the Technique stat by 1.4/1.7/2/2.3/2.6% of Cool cards", 1, 5, 1.4, 1.7, 2, 2.3, 2.6),
+    (330, "Buffs the Technique stat of Sp cards by 2/2.3/2.6/2.9/3.2%", 3, 6, 2, 2.3, 2.6, 2.9, 3.2);
 
 
 
@@ -742,7 +750,15 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (319, 7987, 9039, 10617, 11669, 12721, 14309),
     (320, 6252, 6663, 7896, 9540, 10362, 11199),
     (321, 3191, 3603, 4015, 4427, 5045, 5263),
-    (322, 3411, 3851, 4291, 4731, 4951, 5613);
+    (322, 3411, 3851, 4291, 4731, 4951, 5613),
+    (323, 6862, 7764, 9117, 10019, 10921, 12280),
+    (324, 2921, 3299, 3677, 4055, 4622, 4818),
+    (325, 6002, 6397, 7582, 9162, 9952, 10754),
+    (326, 3473, 4160, 4389, 4847, 5763, 6231),
+    (327, 4134, 4666, 5198, 5464, 5996, 6803),
+    (328, 3047, 3441, 3835, 4229, 4426, 5028),
+    (329, 5842, 6226, 7378, 8914, 9682, 10465),
+    (330, 4011, 4529, 5047, 5565, 5824, 6603);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 1603, 1861, 1990, 2119, 2377, 2638),
@@ -1066,7 +1082,15 @@ INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (319, 3471, 3699, 4383, 5295, 5751, 6222),
     (320, 3993, 4782, 5045, 5571, 6623, 7153),
     (321, 4471, 5047, 5623, 5911, 6487, 7367),
-    (322, 3295, 3721, 4147, 4360, 4786, 5436);
+    (322, 3295, 3721, 4147, 4360, 4786, 5436),
+    (323, 3670, 3911, 4634, 5598, 6080, 6568),
+    (324, 4340, 4900, 5460, 5740, 6300, 7140),
+    (325, 4220, 4774, 5605, 6159, 6713, 7557),
+    (326, 6293, 7121, 8363, 9191, 10019, 11264),
+    (327, 2336, 2636, 2936, 3236, 3386, 3845),
+    (328, 2239, 2529, 2819, 3109, 3544, 3696),
+    (329, 3403, 4075, 4299, 4747, 5643, 6103),
+    (330, 2604, 2940, 3276, 3612, 4116, 4284);
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 2882, 3114, 3346, 3810, 4274, 4750),
@@ -1390,7 +1414,15 @@ INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (319, 5907, 7071, 7459, 8235, 9787, 10576),
     (320, 7120, 8056, 9460, 10396, 11332, 12754),
     (321, 2980, 3364, 3748, 4132, 4324, 4910),
-    (322, 3936, 4444, 4952, 5460, 6222, 6490);
+    (322, 3936, 4444, 4952, 5460, 6222, 6490),
+    (323, 5426, 6497, 6854, 7568, 8996, 9710),
+    (324, 3577, 4039, 4501, 4963, 5194, 5889),
+    (325, 6002, 7187, 7582, 8372, 9952, 10754),
+    (326, 3608, 3845, 4556, 5504, 5978, 6470),
+    (327, 2509, 2833, 3157, 3481, 3967, 4141),
+    (328, 3681, 4155, 4629, 4866, 5340, 6062),
+    (329, 6980, 7898, 9275, 10193, 11111, 12498),
+    (330, 4223, 4769, 5315, 5588, 6134, 6960);
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, card_source_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
 	(1, 1, 1, 1, 6, 1, "Otonokizaka High Second-Year", "Energetic Girl Who's All Smiles", 1, 1, 1, 1, "Increases Voltage by 200/250/300/350/400 (30% activation rate)", "n/a"),
@@ -1539,10 +1571,10 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
 	(144, 3, 3, 4, 3, 4, "I Really Love This Swimsuit", "Humming Angel", 144, 144, 144, 144, "Increases the SP gauge gain of cards of the same attribute [Elegant] by 16/17/18/19/20% for the next 10 notes (33% activation rate)", "If activated upon switching subunits, increases the Voltage boost of the next SP skill by 20% of own Appeal (30% activation chance)"),
 	(145, 15, 3, 3, 4, 4, "As Long as I'm with You", "Devil Rocker", 145, 145, 145, 145, "Increases the skill activation rate of cards in the same subunit by 22/24/26/28/30% for the next 2 notes (33% activation rate)", "If activated at the beginning of the Live, increases the Gd switch bonus of the same subunit by 200% for the remainder of the Live (20% activation chance)"),
 	(146, 25, 3, 1, 1, 4, "Hehe, I'm Glad!", "Scarlet Courage", 146, 146, 146, 146, "Gives a Voltage boost equal to 30/33/36/39/42% of own Appeal (33% activation rate)", "If activated upon switching subunits, gives a Voltage boost equal to 10% of own Appeal (30% activation chance)"),
-	(147, 1, 2, 1, 4, 4, "A Little Extra, Just for You", "Bokura no LIVE Kimi to no LIFE", 147, 147, 147, 147, "Increases the Voltage gain of cards of the same type [Vo] by 4/4.3/4.6/4.9/5.2% for the next 5 notes (30% activation rate)", "If activated upon completing Appeal Chance, increases skill activation rate of all members by 8% for the next 10 notes (50% activation chance)"),
-	(148, 10, 2, 4, 5, 4, "Helping Out at the Ryokan Inn", "Aozora Jumping Heart", 148, 148, 148, 148, "Adds 5/5.5/6/6.5/7% of max SP to the SP gauge (30% activation rate)", "If activated at the beginning of Appeal Chance, increases the Voltage boost of the next SP skill by 8% of own Appeal (30% activation chance)"),
+	(147, 1, 2, 1, 4, 2, "A Little Extra, Just for You", "Bokura no LIVE Kimi to no LIFE", 147, 147, 147, 147, "Increases the Voltage gain of cards of the same type [Vo] by 4/4.3/4.6/4.9/5.2% for the next 5 notes (30% activation rate)", "If activated upon completing Appeal Chance, increases skill activation rate of all members by 8% for the next 10 notes (50% activation chance)"),
+	(148, 10, 2, 4, 5, 2, "Helping Out at the Ryokan Inn", "Aozora Jumping Heart", 148, 148, 148, 148, "Adds 5/5.5/6/6.5/7% of max SP to the SP gauge (30% activation rate)", "If activated at the beginning of Appeal Chance, increases the Voltage boost of the next SP skill by 8% of own Appeal (30% activation chance)"),
 	(149, 14, 3, 4, 6, 4, "This Obstacle is So Much Fun!", "Miracle voyage", 149, 149, 149, 149, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "If activated at the beginning of Appeal Chance, increases the SP gauge gain of cards in the same subunit by 10% for the next 10 notes (30% activation chance)"),
-	(150, 22, 2, 1, 4, 4, "I Feel Bad For Everyone Else, But...", "Exciting Animal", 150, 150, 150, 150, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (30% activation rate)", "If activated at the beginning of Appeal Chance, reduces damage taken by 3% for the duration of the Appeal Chance (20% activation chance)"),
+	(150, 22, 2, 1, 4, 2, "I Feel Bad For Everyone Else, But...", "Exciting Animal", 150, 150, 150, 150, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (30% activation rate)", "If activated at the beginning of Appeal Chance, reduces damage taken by 3% for the duration of the Appeal Chance (20% activation chance)"),
 	(151, 4, 3, 2, 4, 3, "Let's Decide It on the Aqua Course", "Miracle voyage", 151, 151, 151, 151, "Grants a shield equal to 20/23/26/29/32% of own Stamina (33% activation rate)", "If activated upon completing Appeal Chance, recovers Stamina equal to [300 per Gd card in team] (20% activation chance)"),
 	(152, 21, 3, 3, 5, 2, "I Cannot Afford to Slip Here!", "Miracle voyage", 152, 152, 152, 152, "Increases the Critical rate of cards in the same subunit by 8/8.5/9/9.5/10% for the next 10 notes (33% activation rate)", "If activated at the beginning of the Live, increases the Appeal stat of cards in the same subunit by 5% for the remainder of the Live (50% activation chance)"),
 	(153, 6, 2, 2, 6, 3, "*Chuckle* Woohoo!", "Bokura no LIVE Kimi to no LIFE", 153, 153, 153, 153, "Grants a shield equal to 15/18/21/24/27% of own Stamina (30% activation rate)", "If activated upon failing Appeal Chance, recovers Stamina equal to 20% of own Stamina (50% activation chance)"),
@@ -1695,8 +1727,8 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
     (300, 8, 2, 2, 1, 3, "あ、あれっ、あれー！？", "Wonderful Rush", 300, 300, 300, 300, "Recovers Stamina equal to 17/20/23/26/29% of own Stamina (30% activation rate)", "Upon switching subunits, reduces damage taken by 23% for the next 1 note (up to twice per Live)"),
     (301, 1, 3, 1, 6, 4, "ほらほら、じっとして〜", "Cosmic driver", 301, 301, 301, 301, "Increases the Appeal stat of cards in the same strategy by 7/7.5/8/8.5/9%", "At the beginning of the Live, add 100% of this card's appeal to voltage (100% activation chance)"),
     (302, 11, 3, 2, 1, 4, "私とあなた、二人だけの時間", "Rose Melody", 302, 302, 302, 302, "Recovers Stamina equal to 28/31/34/37/40% of own Stamina (33% activation rate)", "If activated on her own taps, Increases Voltage gain of Active cards by 8% for 2 notes (15% activation chance)"),
-    (303, 7, 2, 3, 6, 4, "神様に聞いてみる？", "Wonderful Rush", 303, 303, 303, 303, "Increases the Appeal stat of cards in the same strategy by 5/5.5/6/6.5/7% for 5 notes (30% activation rate)", "At the beginning of the Live, Increase voltage gain from critical notes of cards in the same strategy by 1.5%"),
-    (304, 26, 2, 2, 2, 4, "ふわふわで、カラフルでキラキラ", "Love U my friends", 304, 304, 304, 304, "Reduces Stamina damage by 7/8/9/10/11% for 10 notes (30% activation chance)", "If activated upon switching subunits, cleanses all stat reduction effects (except base stat reductions) (23% activation chance)"),
+    (303, 7, 2, 3, 6, 2, "神様に聞いてみる？", "Wonderful Rush", 303, 303, 303, 303, "Increases the Appeal stat of cards in the same strategy by 5/5.5/6/6.5/7% for 5 notes (30% activation rate)", "At the beginning of the Live, Increase voltage gain from critical notes of cards in the same strategy by 1.5%"),
+    (304, 26, 2, 2, 2, 2, "ふわふわで、カラフルでキラキラ", "Love U my friends", 304, 304, 304, 304, "Reduces Stamina damage by 7/8/9/10/11% for 10 notes (30% activation chance)", "If activated upon switching subunits, cleanses all stat reduction effects (except base stat reductions) (23% activation chance)"),
     (305, 3, 3, 4, 6, 2, "２人とも……そこまでにして！", "Pioneering a new World", 305, 305, 305, 305, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "Upon Appeal Chance completion, increases the Critical rate of all members by 3.9% for the next 5 notes"),
     (306, 21, 2, 3, 4, 2, "風になったような気分", "Love U my friends", 306, 306, 306, 306, "Increases the Critical rate of cards in the same subunit by 5/5.5/6/6.5/7% for the next 10 notes (30% activation rate)", "Upon Appeal Chance completion, increases the skill activation rate of all members by 5% for the next 5 notes"),
     (307, 10, 3, 2, 4, 3, "やるからには負けられない！", "Pioneering a new World", 307, 307, 307, 307, "Grants a shield equal to 17/20/23/26/39% of own Stamina (33% activation rate)", "Upon switching subunits, recovers Stamina equal to 60% of own Stamina (one time)"),
@@ -1713,8 +1745,16 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
     (318, 24, 2, 4, 6, 3, "彼方ちゃん眠る暇もないからー！", "Love U my friends", 318, 318, 318, 318, "Increases the SP gauge gain of all members by 3/3.3/3.6/3.9/4.2% for the next 5 notes (30% activation rate)", "At the beginning of Appeal Chance, increases the Voltage boost of the next SP skill by 2.6% of own Appeal"),
     (319, 12, 3, 1, 1, 4, "今まで見た中で一番綺麗", "Secret Galaxy", 319, 319, 319, 319, "Gives a Voltage boost equal to 30/33/36/39/42% of own Appeal (33% activation rate)", "At the beginning of the Live, increases the Appeal stat of cards in the same subunit by 2.5% for the remainder of the Live"),
     (320, 20, 3, 4, 5, 4, "じゃ――――ん！　どうですか？", "Sweet Moment", 320, 320, 320, 320, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "Upon using SP skill, increases the Voltage boost of the next SP skill by 6.6% of own Appeal (up to 10 times per Live)"),
-    (321, 1, 2, 2, 5, 4, "やっぱりこれがなくっちゃね", "Wonderful Rush", 321, 321, 321, 321, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (30% activation rate)", "Upon Appeal Chance completion, recovers Stamina equal to 6.6% of own Stamina"),
-    (322, 17, 2, 3, 6, 4, "ここから見る夕日", "Koi ni Naritai AQUARIUM", 322, 322, 322, 322, "Grants a shield equal to 15/18/21/24/27% of own Technique (30% activation rate)", "At the beginning of Appeal Chance, increases the Appeal stat of cards in the same subunit by 4% for the next 5 notes");
+    (321, 1, 2, 2, 5, 2, "やっぱりこれがなくっちゃね", "Wonderful Rush", 321, 321, 321, 321, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (30% activation rate)", "Upon Appeal Chance completion, recovers Stamina equal to 6.6% of own Stamina"),
+    (322, 17, 2, 3, 6, 2, "ここから見る夕日", "Koi ni Naritai AQUARIUM", 322, 322, 322, 322, "Grants a shield equal to 15/18/21/24/27% of own Technique (30% activation rate)", "At the beginning of Appeal Chance, increases the Appeal stat of cards in the same subunit by 4% for the next 5 notes"),
+    (323, 21, 3, 1, 6, 2, "「月の世界」へとご案内", "Jugoya moon Rabbit", 323, 323, 323, 323, "Gives a Voltage boost equal to 25/28/31/34/37% of own Appeal (33% activation rate)", "Upon Appeal Chance completion, gives a Voltage boost equal to 10.5% of own Appeal"),
+    (324, 9, 2, 2, 6, 2, "伝説のスクールアイドル伝説", "Yume no Tobira", 324, 324, 324, 324, "Recovers Stamina equal to 20/23/26/29/32% of own Stamina (30% activation rate)", "At the start of Appeal Chance, recovers Stamina equal to 6.6% of own Stamina"),
+    (325, 11, 3, 3, 2, 2, "きれい……", "Jugoya moon Rabbit", 325, 325, 325, 325, "Recovers Stamina equal to 20/23/26/29/32% of own Technique (33% activation rate)", "At the beginning of the Live, increases the Appeal stat of cards of the same attribute [Cool] by 2% for the remainder of the Live"),
+    (326, 5, 3, 2, 5, 3, "なんだか最近、とっても眠くって", "Jugoya moon Rabbit", 326, 326, 326, 326, "Grants a shield equal to 17/20/23/26/29% of own Stamina (33% activation rate)", "Upon switching subunits, grants a shield equal to 1.8% of own Stamina"),
+    (327, 26, 2, 1, 5, 3, "お願いだから力をかして！", "Aion no Uta", 327, 327, 327, 327, "Increases the Voltage gain of all members by 2.8/3.1/3.4/3.7/4% for the next 5 notes (30% activation rate)", "Upon Appeal Chance completion, gives a Voltage boost equal to 7.6% of own Appeal"),
+    (328, 12, 2, 4, 4, 3, "おしょうゆをつけて、っと", "Mitaiken HORIZON", 328, 328, 328, 328, "Increases the Voltage boost of the next SP skill by 20/20.5/21/21.5/22% of own Appeal (30% activation rate)", "At the beginning of Appeal Chance, increases the Voltage boost of the next SP skill by 8.6% of own Appeal (up to twice per Live)"),
+    (329, 18, 3, 4, 2, 2, "どこを探しても無かったグッズ！", "Dreamful☆Rubyland", 329, 329, 329, 329, "Adds 7/7.5/8/8.5/9% of max SP to the SP gauge (33% activation rate)", "At the beginning of Appeal Chance, adds 1% of own Technique to the SP gauge"),
+    (330, 2, 2, 4, 6, 2, "んぐっ！？", "Yume no Tobira", 330, 330, 330, 330, "Adds 5/5.5/6/6.5/7% of max SP to the SP gauge (30% activation rate)", "At the beginning of the Live, adds 3% of own Technique to the SP gauge");
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, card_source_id, title, idolized_title, appeal_id, stamina_id, technique_id, passive_ability_id, secondary_passive_ability_id, primary_active_ability_text, secondary_active_ability_text) VALUES
     (293, 19, 3, 4, 3, 2, "ぎゅってつかまってもいい？", "Present For You♡", 293, 293, 293, 293, 2932, "Increases the SP gauge gain of cards of the same attribute [Elegant] by 5.2/5.5/5.8/6.1/6.4% for the next 10 notes (33% activation rate)", "Upon using SP skill, gives a Voltage boost equal to 7% of own Appeal");
