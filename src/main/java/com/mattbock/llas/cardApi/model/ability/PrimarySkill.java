@@ -4,6 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="passive_abilities")
-public class PassiveAbility extends CardAbility {
+@Table(name="primary_skills")
+public class PrimarySkill extends CardAbility {
 }

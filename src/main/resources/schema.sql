@@ -12,9 +12,9 @@ DROP TABLE IF EXISTS schools;
 DROP TABLE IF EXISTS subunits;
 DROP TABLE IF EXISTS idol_groups;
 
+DROP TABLE IF EXISTS primary_skills;
 DROP TABLE IF EXISTS passive_abilities;
-DROP TABLE IF EXISTS buff_types;
-DROP TABLE IF EXISTS buff_targets;
+DROP TABLE IF EXISTS active_abilities;
 
 
 CREATE TABLE schools (
@@ -48,33 +48,6 @@ CREATE TABLE idols (
     FOREIGN KEY (school_id) REFERENCES schools(id),
     FOREIGN KEY (idol_group_id) REFERENCES idol_groups(id),
     FOREIGN KEY (subunit_id) REFERENCES subunits(id)
-);
-
-CREATE TABLE buff_types (
-    id int NOT NULL,
-    type varchar(20) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE buff_targets (
-    id int NOT NULL,
-    target varchar(20) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE passive_abilities (
-    id int NOT NULL,
-    ability_text varchar(150) NOT NULL,
-    buff_type_id int NOT NULL,
-    buff_target_id int NOT NULL,
-    buff_lvl0 double NOT NULL,
-    buff_lvl1 double NOT NULL,
-    buff_lvl2 double NOT NULL,
-    buff_lvl3 double NOT NULL,
-    buff_lvl4 double NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (buff_type_id) REFERENCES buff_types(id),
-    FOREIGN KEY (buff_target_id) REFERENCES buff_targets(id)
 );
 
 CREATE TABLE rarities (
@@ -136,6 +109,27 @@ CREATE TABLE techniques (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE primary_skills (
+    id int NOT NULL,
+    effect varchar(255) NOT NULL,
+    applies_to varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE passive_abilities (
+    id int NOT NULL,
+    effect varchar(255) NOT NULL,
+    applies_to varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE active_abilities (
+    id int NOT NULL,
+    effect varchar(255) NOT NULL,
+    applies_to varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE cards (
     id int NOT NULL,
     idol_id smallint NOT NULL,
@@ -143,15 +137,14 @@ CREATE TABLE cards (
     card_type_id smallint NOT NULL,
     attribute_id smallint NOT NULL,
     card_source_id smallint NOT NULL,
-    title varchar(100) NOT NULL,
-    idolized_title varchar(100) NOT NULL,
     appeal_id int NOT NULL,
     stamina_id int NOT NULL,
     technique_id int NOT NULL,
+    primary_skill_id int NOT NULL,
     passive_ability_id int NOT NULL,
-    secondary_passive_ability_id int,
-    primary_active_ability_text varchar(250) NOT NULL,
-    secondary_active_ability_text varchar(250),
+    active_ability_id int NOT NULL,
+    title varchar(100) NOT NULL,
+    idolized_title varchar(100) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (idol_id) REFERENCES idols(id),
     FOREIGN KEY (rarity_id) REFERENCES rarities(id),
@@ -161,6 +154,7 @@ CREATE TABLE cards (
     FOREIGN KEY (appeal_id) REFERENCES appeals(id),
     FOREIGN KEY (stamina_id) REFERENCES staminas(id),
     FOREIGN KEY (technique_id) REFERENCES techniques(id),
-    FOREIGN KEY (passive_ability_id) REFERENCES passive_abilities(id),
-    FOREIGN KEY (secondary_passive_ability_id) REFERENCES passive_abilities(id)
+    FOREIGN KEY (primary_skill_id) REFERENCES primary_skills(id),
+    FOREIGN KEY (passive_ability_id) REFERENCES passive_abilities (id),
+    FOREIGN KEY (active_ability_id) REFERENCES active_abilities (id)
 );

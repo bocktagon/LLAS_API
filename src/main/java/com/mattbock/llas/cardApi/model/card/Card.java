@@ -1,6 +1,8 @@
 package com.mattbock.llas.cardApi.model.card;
 
+import com.mattbock.llas.cardApi.model.ability.ActiveAbility;
 import com.mattbock.llas.cardApi.model.ability.PassiveAbility;
+import com.mattbock.llas.cardApi.model.ability.PrimarySkill;
 import com.mattbock.llas.cardApi.model.idol.Idol;
 
 import javax.persistence.*;
@@ -48,15 +50,16 @@ public class Card {
     private Technique technique;
 
     @OneToOne
+    @JoinColumn(name = "primary_skill_id")
+    private PrimarySkill primarySkill;
+
+    @OneToOne
     @JoinColumn(name = "passive_ability_id")
     private PassiveAbility passiveAbility;
 
     @OneToOne
-    @JoinColumn(name = "secondary_passive_ability_id")
-    private PassiveAbility secondaryPassiveAbility;
-
-    private String primaryActiveAbilityText;
-    private String secondaryActiveAbilityText;
+    @JoinColumn(name = "active_ability_id")
+    private ActiveAbility activeAbility;
 
     public Integer getId() {
         return id;
@@ -146,6 +149,14 @@ public class Card {
         this.technique = technique;
     }
 
+    public PrimarySkill getPrimarySkill() {
+        return primarySkill;
+    }
+
+    public void setPrimarySkill(PrimarySkill primarySkill) {
+        this.primarySkill = primarySkill;
+    }
+
     public PassiveAbility getPassiveAbility() {
         return passiveAbility;
     }
@@ -154,27 +165,11 @@ public class Card {
         this.passiveAbility = passiveAbility;
     }
 
-    public PassiveAbility getSecondaryPassiveAbility() {
-        return secondaryPassiveAbility;
+    public ActiveAbility getActiveAbility() {
+        return activeAbility;
     }
 
-    public void setSecondaryPassiveAbility(PassiveAbility secondaryPassiveAbility) {
-        this.secondaryPassiveAbility = secondaryPassiveAbility;
-    }
-
-    public String getPrimaryActiveAbilityText() {
-        return primaryActiveAbilityText;
-    }
-
-    public void setPrimaryActiveAbilityText(String primaryActiveAbilityText) {
-        this.primaryActiveAbilityText = primaryActiveAbilityText;
-    }
-
-    public String getSecondaryActiveAbilityText() {
-        return secondaryActiveAbilityText;
-    }
-
-    public void setSecondaryActiveAbilityText(String secondaryActiveAbilityText) {
-        this.secondaryActiveAbilityText = secondaryActiveAbilityText;
+    public void setActiveAbility(ActiveAbility activeAbility) {
+        this.activeAbility = activeAbility;
     }
 }
