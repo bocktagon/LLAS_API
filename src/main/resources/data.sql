@@ -415,7 +415,21 @@ INSERT INTO llas_cards.appeals (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (337, 6181, 6587, 7805, 9429, 10241, 11066),
     (338, 4516, 5407, 5704, 6298, 7486, 8087),
     (339, 3143, 3549, 3955, 4361, 4970, 5175),
-    (340, 4223, 4769, 5315, 5861, 6134, 6960);
+    (340, 4223, 4769, 5315, 5861, 6134, 6960),
+    (341, 5024, 6017, 6348, 7010, 8334, 9009),
+    (342, 4340, 4900, 5460, 5740, 6300, 7140),
+    (343, 5905, 6293, 7457, 9009, 9785, 10567),
+    (344, 4286, 4568, 5414, 6542, 7106, 7670),
+    (345, 3316, 3744, 4172, 4386, 4814, 5471),
+    (346, 2777, 3135, 3493, 3851, 4388, 4583),
+    (347, 6324, 6740, 7988, 9652, 10484, 11335),
+    (348, 4011, 4529, 5047, 5565, 5824, 6603),
+    (349, 5905, 6293, 7457, 9009, 9785, 10567),
+    (350, 3143, 3549, 3955, 4361, 4970, 5175),
+    (351, 6819, 7715, 9059, 9955, 10851, 12208),
+    (352, 4409, 4699, 5569, 6729, 7309, 7908),
+    (353, 3143, 3549, 3955, 4361, 4564, 5175),
+    (354, 3047, 3441, 3835, 4229, 4820, 5028);
 
 INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 1603, 1861, 1990, 2119, 2377, 2638),
@@ -757,7 +771,21 @@ INSERT INTO llas_cards.staminas (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (337, 3701, 4433, 4677, 5165, 6141, 6639),
     (338, 8165, 9239, 10850, 11924, 12998, 14619),
     (339, 4445, 5019, 5593, 5880, 6454, 7317),
-    (340, 1619, 1829, 2039, 2249, 2564, 2676);
+    (340, 1619, 1829, 2039, 2249, 2564, 2676),
+    (341, 4542, 5140, 6037, 6635, 7233, 8139),
+    (342, 2921, 3299, 3677, 4055, 4244, 4818),
+    (343, 4947, 5597, 6572, 7222, 7872, 8853),
+    (344, 3879, 4644, 4899, 5409, 6429, 6949),
+    (345, 2509, 2833, 3157, 3481, 3643, 4141),
+    (346, 3596, 4060, 4524, 4756, 5220, 5916),
+    (347, 4220, 4774, 5605, 6159, 6713, 7557),
+    (348, 3038, 3430, 3822, 4018, 4410, 4998),
+    (349, 4149, 4968, 5241, 5787, 6879, 7425),
+    (350, 4445, 5019, 5593, 5880, 6454, 7317),
+    (351, 4059, 4326, 5127, 6195, 6729, 7266),
+    (352, 4015, 4543, 5335, 5863, 6391, 7190),
+    (353, 2874, 3244, 3614, 3984, 4539, 4732),
+    (354, 2874, 3244, 3614, 3799, 4169, 4732);
 
 INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
 	(1, 2882, 3114, 3346, 3810, 4274, 4750),
@@ -1099,7 +1127,21 @@ INSERT INTO llas_cards.techniques (id, lb0, lb1, lb2, lb3, lb4, lb5) VALUES
     (337, 7774, 8796, 10329, 11351, 12373, 13912),
     (338, 4682, 4990, 5914, 7146, 7762, 8397),
     (339, 3250, 3670, 4090, 4510, 4720, 5355),
-    (340, 4986, 5630, 6274, 6596, 7240, 8211);
+    (340, 4986, 5630, 6274, 6596, 7240, 8211),
+    (341, 6658, 7096, 8410, 10162, 11038, 11917),
+    (342, 3577, 4039, 4501, 4963, 5656, 5889),
+    (343, 5107, 6115, 6451, 7123, 8467, 9139),
+    (344, 5222, 5908, 6937, 7623, 8309, 9347),
+    (345, 3143, 3549, 3955, 4361, 4970, 5175),
+    (346, 2605, 2941, 3277, 3613, 3781, 4288),
+    (347, 5680, 6802, 7176, 7924, 9420, 10172),
+    (348, 3789, 4279, 4769, 5259, 5994, 6246),
+    (349, 5905, 6681, 7845, 8621, 9397, 10567),
+    (350, 3250, 3670, 4090, 4510, 4720, 5355),
+    (351, 5359, 6415, 6767, 7471, 8879, 9592),
+    (352, 4950, 5928, 6254, 6906, 8210, 8866),
+    (353, 2960, 3342, 3724, 3915, 4297, 4879),
+    (354, 3047, 3441, 3835, 4229, 4426, 5028);
 
 INSERT INTO llas_cards.primary_skills(id, effect, applies_to) VALUES
     (1, "30% chance: Add 20/25/30/35/40% voltage", "n/a"),
@@ -1441,7 +1483,21 @@ INSERT INTO llas_cards.primary_skills(id, effect, applies_to) VALUES
     (337, "33% chance: Buff. Increase SP gauge fill rate by 28/29/30/31/32% for 5 notes", "Natural cards"),
     (338, "33% chance: Add 28/31/34/37/40% of this card's stamina to shield points", "n/a"),
     (339, "30% chance: Buff. Reduce stamina drain by 7/8/9/10/11% for 10 notes", "n/a"),
-    (340, "30% chance: Fill SP gauge by 5/5.5/6/6.5/7%", "n/a");
+    (340, "30% chance: Fill SP gauge by 5/5.5/6/6.5/7%", "n/a"),
+    (341, "33% chance: Restore 20/23/26/29/32% of this card's stamina", "n/a"),
+    (342, "30% chance: Buff. Increase effective appeal by 4/4.3/4.6/4.9/5.2% for 5 notes", "Active cards"),
+    (343, "33% chance: Buff. Increase effective appeal by 7/7.5/8/8.5/9% for 5 notes", "This card's party"),
+    (344, "33% chance: Buff. Increase voltage gain from SP burst by 30/30.5/31/31.5/32% of this card's appeal on the next SP burst", "n/a"),
+    (345, "30% chance: Add 25/28/31/34/37% of this card's appeal to voltage", "n/a"),
+    (346, "30% chance: Add 15/18/21/24/27% of this card's stamina to shield points", "n/a"),
+    (347, "33% chance: Restore 7/10/13/16/19% of this card's technique as stamina / Add 7/10/13/16/19% of this card's technique to shield points", "n/a"),
+    (348, "30% chance: Fill SP gauge by 5/5.5/6/6.5/7%", "n/a"),
+    (349, "33% chance: Buff. Increase voltage gain from SP burst by 30/30.5/31/31.5/32% of this card's appeal on the next SP burst", "n/a"),
+    (350, "30% chance: Add 15/18/21/24/27% of this card's stamina to shield points", "n/a"),
+    (351, "33% chance: Buff. Increase effective appeal by 6/6.3/6.6/6.9/7.2% for 5 notes", "Pure cards"),
+    (352, "33% chance: Fill SP gauge by 6/6.5/7/7.5/8%", "n/a"),
+    (353, "30% chance: Buff. Increase SP gauge fill rate by 3/3.3/3.6/3.9/4.2% for 5 notes", "Everyone"),
+    (354, "30% chance: Restore 17/20/23/26/29% of this card's stamina", "n/a");
 
 INSERT INTO llas_cards.passive_abilities(id, effect, applies_to) VALUES
     (1, "Base technique up by 1/1.3/1.6/1.9/2.2%", "Smile cards"),
@@ -1783,7 +1839,21 @@ INSERT INTO llas_cards.passive_abilities(id, effect, applies_to) VALUES
     (337, "Base technique up by 4/4.3/4.6/4.9/5.2%", "Natural cards"),
     (338, "Base stamina up by 5/5.5/6/6.5/7%", "This card's party"),
     (339, "Base stamina up by 2/2.3/2.6/2.9/3.2%", "Natural cards"),
-    (340, "Base technique up by 2/2.3/2.6/2.9/3.2%", "Cool cards");
+    (340, "Base technique up by 2/2.3/2.6/2.9/3.2%", "Cool cards"),
+    (341, "Base stamina up by 4/4.3/4.6/4.9/5.2%", "Cool cards"),
+    (342, "Base appeal up by 2/2.3/2.6/2.9/3.2%", "Active cards"),
+    (343, "Base technique up by 5/5.5/6/6.5/7%", "This card's party"),
+    (344, "Base appeal up by 7/7.5/8/8.5/9%", "Just this card"),
+    (345, "Base appeal up by 5/5.5/6/6.5/7%", "Just this card"),
+    (346, "Base stamina up by 2/2.3/2.6/2.9/3.2%", "Elegant cards"),
+    (347, "Base technique up by 7/7.5/8/8.5/9%", "Just this card"),
+    (348, "Base appeal up by 5/5.5/6/6.5/7%", "Just this card"),
+    (349, "Base appeal up by 5/5.5/6/6.5/7%", "This card's party"),
+    (350, "Base stamina up by 3/3.5/4/4.5/5%", "This card's party"),
+    (351, "Base appeal up by 4/4.3/4.6/4.9/5.2%", "Pure cards"),
+    (352, "Base technique up by 3/3.3/3.6/3.9/4.2%", "Everyone"),
+    (353, "Base technique up by 5/5.5/6/6.5/7%", "Just this card"),
+    (354, "Base stamina up by 2/2.3/2.6/2.9/3.2%", "Natural cards");
 
 INSERT INTO llas_cards.active_abilities(id, effect, applies_to) VALUES
     (1, "n/a", "n/a"),
@@ -2125,7 +2195,21 @@ INSERT INTO llas_cards.active_abilities(id, effect, applies_to) VALUES
     (337, "After passing an appeal: Buff. Increase voltage gain from SP burst by 7.5% of this card's appeal on the next SP burst", "n/a"),
     (338, "On party rotation (only 2 times per live): Restore 30% of this card's stamina", "n/a"),
     (339, "On party rotation (only 2 times per live): Buff. Reduce stamina drain by 30% for 1 notes", "n/a"),
-    (340, "On SP burst (only 2 times per live): Buff. Increase voltage gain from SP burst by 8.6% of this card's technique on the next SP burst", "Everyone");
+    (340, "On SP burst (only 2 times per live): Buff. Increase voltage gain from SP burst by 8.6% of this card's technique on the next SP burst", "Everyone"),
+    (341, "On SP burst (only 8 times per live): Buff. Reduce stamina drain by 2.5% for 5 notes", "n/a"),
+    (342, "After passing an appeal: Buff. Increase effective appeal by 3.8% for 5 notes", "Active cards"),
+    (343, "On SP burst (only once per live): Add 100% of this card's appeal to voltage", "n/a"),
+    (344, "When live starts: Fill SP gauge by 2.7% of this card's appeal", "n/a"),
+    (345, "When appeal starts: Buff. Increase voltage gain from SP burst by 2.6% of this card's appeal on the next SP burst", "n/a"),
+    (346, "After passing an appeal: Restore 6.6% of this card's stamina", "n/a"),
+    (347, "After passing an appeal: Buff. Voltage gain up by 4.1% for 5 notes", "This card's party"),
+    (348, "On SP burst (only 10 times per live): Add 7% of this card's appeal to voltage", "n/a"),
+    (349, "When appeal starts (only once per live): Increase base SP gain by 2.5%", "This card's party"),
+    (350, "After passing an appeal: Restore 6.6% of this card's stamina", "n/a"),
+    (351, "After passing an appeal: Buff. Increase critical rate by 10% for 5 notes", "Pure cards"),
+    (352, "On SP burst (only 10 times per live): Buff. Increase critical rate by 7% for 3 notes", "Everyone"),
+    (353, "On SP burst: Restore 3% of this card's technique as stamina", "n/a"),
+    (354, "On party rotation (only 2 times per live): Buff. Reduce stamina drain by 23% for 1 notes", "n/a");
 
 INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id, card_source_id, appeal_id, stamina_id, technique_id, primary_skill_id, passive_ability_id, active_ability_id, title, idolized_title) VALUES
     (1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, "Otonokizaka High Second-Year", "Energetic Girl Who's All Smiles"),
@@ -2467,4 +2551,18 @@ INSERT INTO llas_cards.cards (id, idol_id, rarity_id, card_type_id, attribute_id
     (337, 7, 3, 4, 4, 4, 337, 337, 337, 337, 337, 337, "ウチのこと見てくれないの？", "Guide of Fate"),
     (338, 27, 3, 2, 1, 4, 338, 338, 338, 338, 338, 338, "今日、楽しかったから……", "Heart Science"),
     (339, 19, 2, 2, 4, 2, 339, 339, 339, 339, 339, 339, "おすそ分けを持ってきたんだ！", "Say Good-Bye Namida"),
-    (340, 14, 2, 4, 2, 2, 340, 340, 340, 340, 340, 340, "どうかな？　このメガネ！", "Mitaiken HORIZON");
+    (340, 14, 2, 4, 2, 2, 340, 340, 340, 340, 340, 340, "どうかな？　このメガネ！", "Mitaiken HORIZON"),
+    (341, 1, 3, 2, 2, 2, 341, 341, 341, 341, 341, 341, "トップバッター", "S.I.Collection"),
+    (342, 16, 2, 1, 1, 2, 342, 342, 342, 342, 342, 342, "ずらあああ……！", "Mitaiken HORIZON"),
+    (343, 23, 3, 3, 4, 2, 343, 343, 343, 343, 343, 343, "カメラさん、こっちこっち！", "S.I.Collection"),
+    (344, 13, 3, 4, 3, 3, 344, 344, 344, 344, 344, 344, "次は、わたくしですわね", "S.I.Collection"),
+    (345, 7, 2, 1, 5, 3, 345, 345, 345, 345, 345, 345, "なんとかなったみたいやね", "Yume no Tobira"),
+    (346, 21, 2, 2, 3, 3, 346, 346, 346, 346, 346, 346, "役者魂が震えたぎります！", "Yagate Hitotsu no Monogatari"),
+    (347, 10, 3, 3, 3, 2, 347, 347, 347, 347, 347, 347, "やってもやっても終わらない", "Afternoon Tea♡"),
+    (348, 6, 2, 3, 4, 2, 348, 348, 348, 348, 348, 348, "当たり前のことでしょ", "Yume no Tobira"),
+    (349, 24, 3, 4, 1, 2, 349, 349, 349, 349, 349, 349, "いっけーーーー！！！", "Kirakira ★ Night Parade"),
+    (350, 5, 2, 2, 6, 2, 350, 350, 350, 350, 350, 350, "ん～、おいしー！", "Yume no Tobira"),
+    (351, 15, 3, 1, 5, 2, 351, 351, 351, 351, 351, 351, "すごい、すごいわ！", "Kirakira ★ Night Parade"),
+    (352, 6, 3, 3, 5, 3, 352, 352, 352, 352, 352, 352, "キラキラしてる……！", "Kirakira ★ Night Parade"),
+    (353, 20, 2, 4, 6, 3, 353, 353, 353, 353, 353, 353, "どうですか、似合いますか？", "Margaret"),
+    (354, 17, 2, 2, 4, 3, 354, 354, 354, 354, 354, 354, "まだまだ行くわよ～", "Mitaiken HORIZON");
