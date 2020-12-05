@@ -26,7 +26,7 @@ public class CardService {
             put("meme yoshiko", 145);
             put("meme yohane", 145);
             put("fesuna", 146);
-            put("broken", 146);
+            put("broken", 319);
             put("screeching nico", 233);
             put("cabbage rina", 215);
             put("step on me", 129);
@@ -47,6 +47,7 @@ public class CardService {
             put("sideways maki", 272);
             put("mom ass", 298);
             put("ur mom", 117);
+            put("setsanta", 361);
         }
     };
 
@@ -239,6 +240,10 @@ public class CardService {
         }
 
         else return results;
+    }
+
+    public List<Card> advancedSearch(String query) {
+        return new ArrayList<>();
     }
 
 

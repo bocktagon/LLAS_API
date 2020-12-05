@@ -61,4 +61,9 @@ public class CardController {
         return cardService.textSearch(query);
     }
 
+    @GetMapping("/search/advanced")
+    public @ResponseBody Iterable<Card> advancedSearch(@RequestParam String query) {
+        return cardService.advancedSearch(query);
+    }
+
 }

@@ -165,6 +165,8 @@ public class RefService {
                     put("pomu", 19);
                     put("kasu", 20);
                     put("kasukasu", 20);
+                    put("shizu", 21);
+                    put("setsu", 25);
                     put("shio", 28);
                 }
             };
