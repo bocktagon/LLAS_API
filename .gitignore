@@ -4,6 +4,8 @@ type/
 !**/src/main/**
 !**/src/test/**
 /src/main/resources/static/
+/src/main/resources/data.sql
+/src/main/resources/schema.sql
 
 ### STS ###
 .apt_generated
