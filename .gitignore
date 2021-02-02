@@ -6,6 +6,7 @@ type/
 /src/main/resources/static/
 /src/main/resources/data.sql
 /src/main/resources/schema.sql
+/src/main/python/**
 
 ### STS ###
 .apt_generated
